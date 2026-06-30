@@ -5,7 +5,7 @@ Welcome to my portfolio! This is a state-of-the-art, premium portfolio website d
 ---
 
 ## 🚀 Live Demo
-Access the live deployment here: **[bhanuxai-portfolio.vercel.app](https://bhanuXai-portfolio.vercel.app)** *(or check local server at http://localhost:5173/)*
+Access the live deployment here: **[bhanuxai.netlify.app](https://bhanuxai.netlify.app/)** *(or check local server at http://localhost:5173/)*
 
 ---
 
