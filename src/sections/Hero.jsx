@@ -4,6 +4,7 @@ import { ArrowDown, FileText, Send, Code } from 'lucide-react';
 import Lanyard from '../components/Lanyard';
 import DarkVeil from '../components/DarkVeil';
 import SplitText from '../components/SplitText';
+import RotatingText from '../components/RotatingText';
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -71,6 +72,31 @@ export default function Hero() {
               tag="span"
             />
           </h1>
+
+          {/* Sub-headline with Rotating Text */}
+          <motion.h2 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg md:text-xl text-textLight font-semibold mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 justify-center lg:justify-start"
+          >
+            I specialize in{" "}
+            <RotatingText
+              texts={['AI Research', 'Neural Networks', 'Agentic Systems', 'Full-Stack Apps']}
+              mainClassName="px-2.5 py-0.5 bg-accent/15 border border-accent/25 text-accent rounded-lg font-mono inline-flex overflow-hidden"
+              staggerFrom="last"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2500}
+              splitBy="characters"
+              auto
+              loop
+            />
+          </motion.h2>
 
           {/* Description Reveal */}
           <motion.p
