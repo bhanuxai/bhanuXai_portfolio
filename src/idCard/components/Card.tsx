@@ -50,7 +50,7 @@ const Card = ({ student: user, animationDuration = 4 }: { student: User; animati
   useRopeJoint(fixedPoint as React.RefObject<RigidBodyType>, ropeTop as React.RefObject<RigidBodyType>, [[0, -0.5, 0], [0, 0, 0], 1]);
   useRopeJoint(ropeTop as React.RefObject<RigidBodyType>, ropeMiddle as React.RefObject<RigidBodyType>, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(ropeMiddle as React.RefObject<RigidBodyType>, ropeBottom as React.RefObject<RigidBodyType>, [[0, 0, 0], [0, 0, 0], 1]);
-  useSphericalJoint(ropeBottom as React.RefObject<RigidBodyType>, card as React.RefObject<RigidBodyType>, [[0, 0, 0], [0, 2.658, 0]]);
+  useSphericalJoint(ropeBottom as React.RefObject<RigidBodyType>, card as React.RefObject<RigidBodyType>, [[0, 0, 0], [0, 1.74, 0]]);
 
   useMemo(() => { texture.wrapS = texture.wrapT = THREE.RepeatWrapping; }, [texture]);
 
@@ -154,10 +154,10 @@ const Card = ({ student: user, animationDuration = 4 }: { student: User; animati
         </RigidBody>
 
         <RigidBody ref={card} {...segmentProps} position={[2, 0, 0]} rotation={[0, Math.PI / 2, 0]} type={dragged ? "kinematicPosition" : "dynamic"}>
-          <CuboidCollider args={[1.467, 2.063, 0.01]} />
+          <CuboidCollider args={[0.96, 1.35, 0.01]} />
           <group 
-            scale={5.5} 
-            position={[0, -3.896, -0.05]}
+            scale={3.6} 
+            position={[0, -2.55, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
             onPointerUp={(e) => {
