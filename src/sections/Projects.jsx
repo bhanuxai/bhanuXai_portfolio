@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Code2, Brain, Sparkles, ChevronDown, ChevronUp, Layers, Terminal, Cpu } from 'lucide-react';
+import { ExternalLink, Code2, Brain, Sparkles, ChevronDown, ChevronUp, Layers, Terminal, Cpu, Globe } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const PROJECTS_DATA = [
@@ -13,8 +13,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'Three.js', 'GSAP', 'Tailwind CSS'],
     github: 'https://github.com/bhanuxai/parallax-storytelling.git',
     live: 'https://github.com/bhanuxai/parallax-storytelling',
-    bannerIcon: Layers,
-    accentGradient: 'from-cyan-500/20 via-blue-600/10 to-transparent',
+    previewImage: '/images/previews/parallax.png',
+    domainUrl: 'parallax-storytelling.vercel.app',
     tagBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30'
   },
   {
@@ -26,8 +26,8 @@ const PROJECTS_DATA = [
     technologies: ['Python', 'Scikit-learn', 'NLP', 'Pandas', 'Flask'],
     github: 'https://github.com/bhanuxai/RedRobCandidateRanking-IndiaRuns.git',
     live: 'https://github.com/bhanuxai/RedRobCandidateRanking-IndiaRuns',
-    bannerIcon: Brain,
-    accentGradient: 'from-purple-500/20 via-pink-600/10 to-transparent',
+    previewImage: '/images/previews/ranking.png',
+    domainUrl: 'redrob-candidate-ranking.vercel.app',
     tagBg: 'bg-purple-500/10 text-purple-400 border-purple-500/30'
   },
   {
@@ -39,8 +39,8 @@ const PROJECTS_DATA = [
     technologies: ['Python', 'TensorFlow', 'OpenCV', 'Keras', 'MobileNetV2'],
     github: 'https://github.com/bhanuxai/FaceMaskDetectionSystem.git',
     live: 'https://github.com/bhanuxai/FaceMaskDetectionSystem',
-    bannerIcon: Cpu,
-    accentGradient: 'from-emerald-500/20 via-teal-600/10 to-transparent',
+    previewImage: '/images/previews/mask.png',
+    domainUrl: 'facemask-detector.vercel.app',
     tagBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
   },
   {
@@ -52,8 +52,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'Vite', 'Tailwind CSS', 'Firebase'],
     github: 'https://github.com/bhanuxai/sectra-college-connect.git',
     live: 'https://github.com/bhanuxai/sectra-college-connect',
-    bannerIcon: Code2,
-    accentGradient: 'from-blue-500/20 via-indigo-600/10 to-transparent',
+    previewImage: '/images/previews/connect.png',
+    domainUrl: 'sectra-college-connect.vercel.app',
     tagBg: 'bg-blue-500/10 text-blue-400 border-blue-500/30'
   },
   {
@@ -65,8 +65,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'TypeScript', 'Monaco Editor', 'Tailwind'],
     github: 'https://github.com/bhanuxai/codedrop.git',
     live: 'https://github.com/bhanuxai/codedrop',
-    bannerIcon: Terminal,
-    accentGradient: 'from-amber-500/20 via-orange-600/10 to-transparent',
+    previewImage: '/images/previews/codedrop.png',
+    domainUrl: 'codedrop-share.vercel.app',
     tagBg: 'bg-amber-500/10 text-amber-400 border-amber-500/30'
   },
   {
@@ -78,8 +78,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'Framer Motion', 'Tailwind CSS', 'Vite'],
     github: 'https://github.com/bhanuxai/Apeiron.git',
     live: 'https://github.com/bhanuxai/Apeiron',
-    bannerIcon: Sparkles,
-    accentGradient: 'from-violet-500/20 via-purple-600/10 to-transparent',
+    previewImage: '/images/previews/cyborg.png',
+    domainUrl: 'apeiron-ui.vercel.app',
     tagBg: 'bg-violet-500/10 text-violet-400 border-violet-500/30'
   },
   {
@@ -91,8 +91,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'JavaScript'],
     github: 'https://github.com/bhanuxai/globalbaritev2.git',
     live: 'https://github.com/bhanuxai/globalbaritev2',
-    bannerIcon: Code2,
-    accentGradient: 'from-yellow-500/20 via-amber-600/10 to-transparent',
+    previewImage: '/images/previews/parallax.png',
+    domainUrl: 'globalbarite.vercel.app',
     tagBg: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30'
   },
   {
@@ -104,8 +104,8 @@ const PROJECTS_DATA = [
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Tailwind'],
     github: 'https://github.com/bhanuxai/lputgpacalculatorcodewithbss.git',
     live: 'https://github.com/bhanuxai/lputgpacalculatorcodewithbss',
-    bannerIcon: Terminal,
-    accentGradient: 'from-rose-500/20 via-red-600/10 to-transparent',
+    previewImage: '/images/previews/codedrop.png',
+    domainUrl: 'lpu-gpa-calculator.vercel.app',
     tagBg: 'bg-rose-500/10 text-rose-400 border-rose-500/30'
   },
   {
@@ -117,8 +117,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'Redux Toolkit', 'Tailwind CSS', 'Framer Motion'],
     github: 'https://github.com/bhanuxai/Clutch.git',
     live: 'https://github.com/bhanuxai/Clutch',
-    bannerIcon: Code2,
-    accentGradient: 'from-fuchsia-500/20 via-pink-600/10 to-transparent',
+    previewImage: '/images/previews/connect.png',
+    domainUrl: 'clutch-store.vercel.app',
     tagBg: 'bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/30'
   },
   {
@@ -130,8 +130,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'Tailwind CSS', 'JavaScript', 'HTML5'],
     github: 'https://github.com/bhanuxai/Nisarg-Srishti-Welfare-Foundation-NSWF-.git',
     live: 'https://github.com/bhanuxai/Nisarg-Srishti-Welfare-Foundation-NSWF-',
-    bannerIcon: Sparkles,
-    accentGradient: 'from-green-500/20 via-emerald-600/10 to-transparent',
+    previewImage: '/images/previews/parallax.png',
+    domainUrl: 'nswf-foundation.org',
     tagBg: 'bg-green-500/10 text-green-400 border-green-500/30'
   },
   {
@@ -143,8 +143,8 @@ const PROJECTS_DATA = [
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
     github: 'https://github.com/bhanuxai/Cyborg-Themed-Landing-Page.git',
     live: 'https://github.com/bhanuxai/Cyborg-Themed-Landing-Page',
-    bannerIcon: Layers,
-    accentGradient: 'from-sky-500/20 via-cyan-600/10 to-transparent',
+    previewImage: '/images/previews/cyborg.png',
+    domainUrl: 'cyborg-gaming.vercel.app',
     tagBg: 'bg-sky-500/10 text-sky-400 border-sky-500/30'
   },
   {
@@ -156,8 +156,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'Framer Motion', 'Node.js', 'TensorFlow.js'],
     github: 'https://github.com/bhanuxai/donext-ai',
     live: 'https://donext-ai.vercel.app',
-    bannerIcon: Brain,
-    accentGradient: 'from-violet-500/20 via-purple-600/10 to-transparent',
+    previewImage: '/images/previews/ranking.png',
+    domainUrl: 'donext-ai.vercel.app',
     tagBg: 'bg-violet-500/10 text-violet-400 border-violet-500/30'
   },
   {
@@ -169,8 +169,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'GSAP', 'Python', 'FastAPI', 'PyTorch'],
     github: 'https://github.com/bhanuxai/sectra',
     live: 'https://sectra-sec.vercel.app',
-    bannerIcon: Cpu,
-    accentGradient: 'from-red-500/20 via-rose-600/10 to-transparent',
+    previewImage: '/images/previews/mask.png',
+    domainUrl: 'sectra-sec.vercel.app',
     tagBg: 'bg-red-500/10 text-red-400 border-red-500/30'
   },
   {
@@ -182,8 +182,8 @@ const PROJECTS_DATA = [
     technologies: ['React', 'Gemini API', 'Python', 'MongoDB', 'Tailwind'],
     github: 'https://github.com/bhanuxai/resume-analyzer',
     live: 'https://cv-analyser.vercel.app',
-    bannerIcon: Brain,
-    accentGradient: 'from-emerald-500/20 via-teal-600/10 to-transparent',
+    previewImage: '/images/previews/ranking.png',
+    domainUrl: 'cv-analyser.vercel.app',
     tagBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
   }
 ];
@@ -275,7 +275,6 @@ export default function Projects() {
         >
           <AnimatePresence mode="popLayout">
             {displayedProjects.map((project) => {
-              const BannerIcon = project.bannerIcon || Code2;
               return (
                 <motion.div
                   layout
@@ -286,20 +285,40 @@ export default function Projects() {
                   key={project.id}
                   className="group glassmorphism rounded-2xl border border-glassBorder overflow-hidden hover:border-primary/40 transition-all duration-500 flex flex-col h-full hover:shadow-glass-glow"
                 >
-                  {/* Project Banner Area */}
-                  <div className={`h-44 border-b border-glassBorder relative overflow-hidden bg-gradient-to-br ${project.accentGradient} flex items-center justify-center p-6`}>
-                    <div className="absolute inset-0 grid-bg opacity-15" />
+                  {/* Browser Window Frame Header & Live Preview Screenshot */}
+                  <div className="h-52 relative overflow-hidden bg-black/40 border-b border-glassBorder flex flex-col">
                     
-                    {/* Category Tag Badge */}
-                    <div className="absolute top-4 right-4 z-10">
-                      <span className={`px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider border ${project.tagBg}`}>
+                    {/* Browser Window Header Bar */}
+                    <div className="px-4 py-2 bg-zinc-900/90 border-b border-white/10 flex items-center justify-between z-20 shrink-0">
+                      {/* Window Traffic Dots */}
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block" />
+                      </div>
+
+                      {/* Mock Browser URL Pill */}
+                      <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white/5 border border-white/10 text-[9px] text-textMuted font-mono truncate max-w-[170px]">
+                        <Globe className="w-2.5 h-2.5 text-primary shrink-0" />
+                        <span className="truncate">{project.domainUrl}</span>
+                      </div>
+
+                      {/* Category Tag Badge */}
+                      <span className={`px-2 py-0.5 rounded text-[9px] font-extrabold uppercase tracking-wider border ${project.tagBg}`}>
                         {project.category}
                       </span>
                     </div>
 
-                    {/* Banner Visual Icon */}
-                    <div className="relative z-10 p-4 rounded-2xl glassmorphism border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                      <BannerIcon className="w-8 h-8 text-primary" />
+                    {/* Screenshot Preview Image */}
+                    <div className="relative flex-grow overflow-hidden bg-zinc-950 flex items-center justify-center">
+                      <img
+                        src={project.previewImage}
+                        alt={`${project.title} live website preview`}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                        loading="lazy"
+                      />
+                      {/* Subtle hover gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
                     </div>
                   </div>
 
@@ -347,7 +366,7 @@ export default function Projects() {
                         rel="noreferrer"
                         className="flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-cyan-300 transition-colors ml-auto cursor-pointer"
                       >
-                        Repository
+                        Preview App
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     </div>
