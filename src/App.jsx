@@ -134,7 +134,7 @@ export default function App() {
           >
             <ProfileCard
               name="Bhanu Sesha Sai"
-              title="Frontend Developer"
+              title="AI & ML Engineer & Frontend Developer"
               handle="bhanuxai"
               status="Online & Available"
               contactText="Get in Touch"

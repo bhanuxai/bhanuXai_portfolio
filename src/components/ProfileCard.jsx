@@ -29,7 +29,7 @@ const ProfileCardComponent = ({
   mobileTiltSensitivity = 5,
   miniAvatarUrl,
   name = 'Bhanu Sesha Sai',
-  title = 'Frontend Developer',
+  title = 'AI & ML Engineer & Frontend Developer',
   handle = 'bhanuxai',
   status = 'Online',
   contactText = 'Contact',
