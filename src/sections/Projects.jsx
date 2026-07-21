@@ -1,180 +1,214 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Shield, Sparkles, FileText, BarChart2, Truck, CheckSquare } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Code2, Brain, Sparkles, ChevronDown, ChevronUp, Layers, Terminal, Cpu } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const PROJECTS_DATA = [
   {
     id: 1,
-    title: 'DoNext AI',
-    subtitle: 'AI-Powered Task Orchestrator',
-    description: 'An intelligent planner that analyzes team velocity, predicts delivery bottlenecks using machine learning, and sequences tasks based on dynamic dependency trees.',
-    technologies: ['React', 'Framer Motion', 'Node.js', 'TensorFlow.js'],
-    github: 'https://github.com/bhanuxai/donext-ai',
-    live: 'https://donext-ai.vercel.app',
-    banner: (
-      <div className="w-full h-full bg-violet-200 dark:bg-violet-950 relative flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-15" />
-        <div className="flex flex-col gap-2.5 w-3/4 p-4 rounded-xl glassmorphism border border-white/10 shadow-lg relative z-10">
-          <div className="flex items-center gap-2 border-b border-white/5 pb-2">
-            <CheckSquare className="w-4 h-4 text-primary" />
-            <span className="text-[10px] uppercase tracking-wider text-textLight font-mono">Task Sequence Planner</span>
-          </div>
-          <div className="space-y-1.5">
-            <div className="h-2 w-3/4 rounded bg-primary/40 animate-pulse" />
-            <div className="h-2 w-1/2 rounded bg-accent/40" />
-            <div className="h-2 w-5/6 rounded bg-white/10" />
-          </div>
-        </div>
-      </div>
-    )
+    category: 'Frontend',
+    title: 'Parallax Storytelling',
+    subtitle: 'Interactive Narrative & Motion',
+    description: 'An immersive storytelling web experience built with smooth parallax scrolling, dynamic layered animations, and 3D web visuals.',
+    technologies: ['React', 'Three.js', 'GSAP', 'Tailwind CSS'],
+    github: 'https://github.com/bhanuxai/parallax-storytelling.git',
+    live: 'https://github.com/bhanuxai/parallax-storytelling',
+    bannerIcon: Layers,
+    accentGradient: 'from-cyan-500/20 via-blue-600/10 to-transparent',
+    tagBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30'
   },
   {
     id: 2,
-    title: 'Sectra',
-    subtitle: 'Zero-Trust Threat Analytics',
-    description: 'A cyber threat visualization platform that tracks network packet routes in real-time, detecting anomalies using isolation forests and sequence-to-sequence LSTM models.',
-    technologies: ['React', 'GSAP', 'Python', 'FastAPI', 'PyTorch'],
-    github: 'https://github.com/bhanuxai/sectra',
-    live: 'https://sectra-sec.vercel.app',
-    banner: (
-      <div className="w-full h-full bg-rose-200 dark:bg-rose-950 relative flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-10" />
-        <div className="relative w-36 h-36 border border-white/5 rounded-full flex items-center justify-center">
-          <div className="absolute inset-2 border border-cyan-500/10 rounded-full animate-spin-slow" />
-          <div className="absolute inset-6 border border-primary/20 rounded-full animate-pulse-slow" />
-          <Shield className="w-10 h-10 text-cyan-400 absolute" />
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-cyan-500/20 animate-pulse" />
-        </div>
-      </div>
-    )
+    category: 'Machine Learning',
+    title: 'RedRob Candidate Ranking',
+    subtitle: 'AI Shortlisting & Resume Scoring',
+    description: 'Machine learning pipeline for candidate shortlisting, scoring technical competencies, and ranking applicants with NLP metrics.',
+    technologies: ['Python', 'Scikit-learn', 'NLP', 'Pandas', 'Flask'],
+    github: 'https://github.com/bhanuxai/RedRobCandidateRanking-IndiaRuns.git',
+    live: 'https://github.com/bhanuxai/RedRobCandidateRanking-IndiaRuns',
+    bannerIcon: Brain,
+    accentGradient: 'from-purple-500/20 via-pink-600/10 to-transparent',
+    tagBg: 'bg-purple-500/10 text-purple-400 border-purple-500/30'
   },
   {
     id: 3,
-    title: 'Resume Analyzer',
-    subtitle: 'Automated CV Semantic Parser',
-    description: 'An HR analytics model that parses candidate CVs using optical character recognition, extracts key skill vectors, and scores them against JDs using cosine semantic similarity.',
-    technologies: ['React', 'Gemini API', 'Python', 'MongoDB', 'Tailwind'],
-    github: 'https://github.com/bhanuxai/resume-analyzer',
-    live: 'https://cv-analyser.vercel.app',
-    banner: (
-      <div className="w-full h-full bg-emerald-200 dark:bg-emerald-950 relative flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-15" />
-        <div className="w-3/5 p-4 rounded-xl glassmorphism border border-white/10 shadow-lg relative z-10 flex items-center gap-4">
-          <FileText className="w-12 h-12 text-emerald-400 shrink-0" />
-          <div className="flex-grow space-y-2">
-            <div className="h-2.5 w-full bg-emerald-400/20 rounded" />
-            <div className="h-1.5 w-5/6 bg-white/10 rounded" />
-            <div className="h-1.5 w-2/3 bg-white/5 rounded" />
-          </div>
-        </div>
-      </div>
-    )
+    category: 'Machine Learning',
+    title: 'Face Mask Detection System',
+    subtitle: 'Real-Time Computer Vision Detector',
+    description: 'Deep learning model trained with MobileNetV2 and OpenCV for automated real-time face mask detection in video streams.',
+    technologies: ['Python', 'TensorFlow', 'OpenCV', 'Keras', 'MobileNetV2'],
+    github: 'https://github.com/bhanuxai/FaceMaskDetectionSystem.git',
+    live: 'https://github.com/bhanuxai/FaceMaskDetectionSystem',
+    bannerIcon: Cpu,
+    accentGradient: 'from-emerald-500/20 via-teal-600/10 to-transparent',
+    tagBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
   },
   {
     id: 4,
-    title: 'Candidate Ranking AI',
-    subtitle: 'Deep Match Recruitment Engine',
-    description: 'A candidate shortlisting orchestrator that maps multi-modal data including speech patterns and transcription sentiment scores using advanced Transformer pipelines.',
-    technologies: ['React', 'PyTorch', 'OpenAI API', 'Express', 'MongoDB'],
-    github: 'https://github.com/bhanuxai/candidate-ranking-ai',
-    live: 'https://ranking-ai.vercel.app',
-    banner: (
-      <div className="w-full h-full bg-amber-200 dark:bg-amber-950 relative flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-10" />
-        <div className="w-2/3 p-4 rounded-xl glassmorphism border border-white/10 shadow-lg relative z-10 flex flex-col gap-3">
-          <div className="flex justify-between items-center">
-            <span className="text-[10px] text-amber-400 font-bold uppercase font-mono tracking-widest">Candidate Rank</span>
-            <Sparkles className="w-3 h-3 text-amber-400" />
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center justify-between text-xs text-white border-b border-white/5 pb-1">
-              <span>John Doe</span>
-              <span className="text-amber-400 font-bold">98.2%</span>
-            </div>
-            <div className="flex items-center justify-between text-[10px] text-textMuted">
-              <span>Jane Smith</span>
-              <span>89.5%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+    category: 'Frontend',
+    title: 'Sectra College Connect',
+    subtitle: 'Campus Networking Hub',
+    description: 'A modern community platform for university students to share projects, connect with peers, and collaborate on campus events.',
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Firebase'],
+    github: 'https://github.com/bhanuxai/sectra-college-connect.git',
+    live: 'https://github.com/bhanuxai/sectra-college-connect',
+    bannerIcon: Code2,
+    accentGradient: 'from-blue-500/20 via-indigo-600/10 to-transparent',
+    tagBg: 'bg-blue-500/10 text-blue-400 border-blue-500/30'
   },
   {
     id: 5,
-    title: 'UniDelivery',
-    subtitle: 'Campus Drone Logistics Core',
-    description: 'A delivery routing optimization engine that dynamically solves spatial path problems for drone fleets, minimizing fuel burn and delivery latency across campus.',
-    technologies: ['React Native', 'Firebase', 'Node.js', 'Express', 'Mapbox API'],
-    github: 'https://github.com/bhanuxai/unidelivery',
-    live: 'https://unidelivery.vercel.app',
-    banner: (
-      <div className="w-full h-full bg-cyan-200 dark:bg-cyan-950 relative flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-15" />
-        <div className="relative w-40 h-24 border border-white/10 rounded-xl glassmorphism flex items-center justify-center overflow-hidden">
-          <div className="absolute top-2 left-2 flex items-center gap-1.5">
-            <Truck className="w-3 h-3 text-blue-400" />
-            <span className="text-[8px] font-mono text-blue-400 uppercase">Route optimization</span>
-          </div>
-          {/* Mock Map Vector */}
-          <svg className="w-full h-3/4 absolute bottom-0 opacity-40" viewBox="0 0 100 50">
-            <path d="M10,40 L40,15 L70,35 L90,10" fill="none" stroke="#00d2ff" strokeWidth="2" />
-            <circle cx="10" cy="40" r="3" fill="#ff007f" />
-            <circle cx="40" cy="15" r="3" fill="#7C3AED" />
-            <circle cx="70" cy="35" r="3" fill="#7C3AED" />
-            <circle cx="90" cy="10" r="3" fill="#06B6D4" />
-          </svg>
-        </div>
-      </div>
-    )
+    category: 'Frontend',
+    title: 'CodeDrop',
+    subtitle: 'Instant Code & Snippet Sharing Utility',
+    description: 'Developer tool for instant code snippet creation, real-time syntax highlighting, and quick shareable links.',
+    technologies: ['React', 'TypeScript', 'Monaco Editor', 'Tailwind'],
+    github: 'https://github.com/bhanuxai/codedrop.git',
+    live: 'https://github.com/bhanuxai/codedrop',
+    bannerIcon: Terminal,
+    accentGradient: 'from-amber-500/20 via-orange-600/10 to-transparent',
+    tagBg: 'bg-amber-500/10 text-amber-400 border-amber-500/30'
   },
   {
     id: 6,
-    title: 'Online Voting System',
-    subtitle: 'Decentralized Blockchain Balloting',
-    description: 'A tamper-proof digital voting interface utilizing cryptographic hashes, secure wallet signing, and consensus-driven tallies to guarantee transparent audit logs.',
-    technologies: ['React', 'Solidity', 'Web3.js', 'Ethers.js', 'Tailwind'],
-    github: 'https://github.com/bhanuxai/online-voting-system',
-    live: 'https://voting-blockchain.vercel.app',
-    banner: (
-      <div className="w-full h-full bg-fuchsia-200 dark:bg-fuchsia-950 relative flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-15" />
-        <div className="w-3/5 p-4 rounded-xl glassmorphism border border-white/10 shadow-lg relative z-10 flex flex-col gap-2">
-          <div className="flex justify-between items-center text-[10px] font-mono border-b border-white/5 pb-1">
-            <span className="text-fuchsia-400">BLOCKCHAIN SECURE</span>
-            <span className="text-emerald-400">Active</span>
-          </div>
-          <div className="flex items-center gap-3 py-1">
-            <BarChart2 className="w-8 h-8 text-fuchsia-500 shrink-0" />
-            <div className="flex-grow space-y-1.5">
-              <div className="h-1.5 w-full bg-fuchsia-400/30 rounded" />
-              <div className="h-1.5 w-2/3 bg-white/10 rounded" />
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+    category: 'Frontend',
+    title: 'Apeiron',
+    subtitle: 'Modern Web Design & Interactive UI',
+    description: 'Premium web interface featuring smooth micro-animations, glassmorphism design system, and sleek dark mode aesthetics.',
+    technologies: ['React', 'Framer Motion', 'Tailwind CSS', 'Vite'],
+    github: 'https://github.com/bhanuxai/Apeiron.git',
+    live: 'https://github.com/bhanuxai/Apeiron',
+    bannerIcon: Sparkles,
+    accentGradient: 'from-violet-500/20 via-purple-600/10 to-transparent',
+    tagBg: 'bg-violet-500/10 text-violet-400 border-violet-500/30'
+  },
+  {
+    id: 7,
+    category: 'Frontend',
+    title: 'Global Barite V2',
+    subtitle: 'Industrial Enterprise Website',
+    description: 'High-performance corporate showcase built for global mineral suppliers with responsive product catalogs and dynamic inquiries.',
+    technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'JavaScript'],
+    github: 'https://github.com/bhanuxai/globalbaritev2.git',
+    live: 'https://github.com/bhanuxai/globalbaritev2',
+    bannerIcon: Code2,
+    accentGradient: 'from-yellow-500/20 via-amber-600/10 to-transparent',
+    tagBg: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30'
+  },
+  {
+    id: 8,
+    category: 'Frontend',
+    title: 'LPU TGPA/CGPA Calculator',
+    subtitle: 'University Academic Grade Estimator',
+    description: 'Utility web app designed for students to easily calculate semester TGPA/CGPA, forecast grades, and track academic targets.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Tailwind'],
+    github: 'https://github.com/bhanuxai/lputgpacalculatorcodewithbss.git',
+    live: 'https://github.com/bhanuxai/lputgpacalculatorcodewithbss',
+    bannerIcon: Terminal,
+    accentGradient: 'from-rose-500/20 via-red-600/10 to-transparent',
+    tagBg: 'bg-rose-500/10 text-rose-400 border-rose-500/30'
+  },
+  {
+    id: 9,
+    category: 'Frontend',
+    title: 'Clutch',
+    subtitle: 'Dynamic E-Commerce Showcase',
+    description: 'Sleek web application with interactive product customizer, cart management, and seamless UI transitions.',
+    technologies: ['React', 'Redux Toolkit', 'Tailwind CSS', 'Framer Motion'],
+    github: 'https://github.com/bhanuxai/Clutch.git',
+    live: 'https://github.com/bhanuxai/Clutch',
+    bannerIcon: Code2,
+    accentGradient: 'from-fuchsia-500/20 via-pink-600/10 to-transparent',
+    tagBg: 'bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/30'
+  },
+  {
+    id: 10,
+    category: 'Frontend',
+    title: 'Nisarg Srishti Foundation',
+    subtitle: 'NGO Portal & Community Welfare',
+    description: 'Full-featured NGO website featuring impact stories, donation drives, volunteer registration, and awareness campaigns.',
+    technologies: ['React', 'Tailwind CSS', 'JavaScript', 'HTML5'],
+    github: 'https://github.com/bhanuxai/Nisarg-Srishti-Welfare-Foundation-NSWF-.git',
+    live: 'https://github.com/bhanuxai/Nisarg-Srishti-Welfare-Foundation-NSWF-',
+    bannerIcon: Sparkles,
+    accentGradient: 'from-green-500/20 via-emerald-600/10 to-transparent',
+    tagBg: 'bg-green-500/10 text-green-400 border-green-500/30'
+  },
+  {
+    id: 11,
+    category: 'Frontend',
+    title: 'Cyborg Landing Page',
+    subtitle: 'Cyberpunk Gaming & Esports Portal',
+    description: 'Dark futuristic landing page built with glowing neon accents, hero banners, and interactive game library cards.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+    github: 'https://github.com/bhanuxai/Cyborg-Themed-Landing-Page.git',
+    live: 'https://github.com/bhanuxai/Cyborg-Themed-Landing-Page',
+    bannerIcon: Layers,
+    accentGradient: 'from-sky-500/20 via-cyan-600/10 to-transparent',
+    tagBg: 'bg-sky-500/10 text-sky-400 border-sky-500/30'
+  },
+  {
+    id: 12,
+    category: 'Machine Learning',
+    title: 'DoNext AI',
+    subtitle: 'AI Task Orchestrator',
+    description: 'An intelligent planner analyzing team velocity and predicting delivery bottlenecks using machine learning algorithms.',
+    technologies: ['React', 'Framer Motion', 'Node.js', 'TensorFlow.js'],
+    github: 'https://github.com/bhanuxai/donext-ai',
+    live: 'https://donext-ai.vercel.app',
+    bannerIcon: Brain,
+    accentGradient: 'from-violet-500/20 via-purple-600/10 to-transparent',
+    tagBg: 'bg-violet-500/10 text-violet-400 border-violet-500/30'
+  },
+  {
+    id: 13,
+    category: 'Machine Learning',
+    title: 'Sectra Threat Analytics',
+    subtitle: 'Zero-Trust Threat Visualizer',
+    description: 'A cyber threat visualization platform tracking packet routes in real-time and detecting anomalies using LSTMs.',
+    technologies: ['React', 'GSAP', 'Python', 'FastAPI', 'PyTorch'],
+    github: 'https://github.com/bhanuxai/sectra',
+    live: 'https://sectra-sec.vercel.app',
+    bannerIcon: Cpu,
+    accentGradient: 'from-red-500/20 via-rose-600/10 to-transparent',
+    tagBg: 'bg-red-500/10 text-red-400 border-red-500/30'
+  },
+  {
+    id: 14,
+    category: 'Machine Learning',
+    title: 'Resume Analyzer',
+    subtitle: 'Automated CV Semantic Parser',
+    description: 'HR analytics model parsing candidate CVs with OCR, extracting skill vectors, and evaluating candidates against job descriptions.',
+    technologies: ['React', 'Gemini API', 'Python', 'MongoDB', 'Tailwind'],
+    github: 'https://github.com/bhanuxai/resume-analyzer',
+    live: 'https://cv-analyser.vercel.app',
+    bannerIcon: Brain,
+    accentGradient: 'from-emerald-500/20 via-teal-600/10 to-transparent',
+    tagBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
   }
 ];
 
 export default function Projects() {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [showAll, setShowAll] = useState(false);
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
+  const categories = [
+    { label: 'All Projects', value: 'All', icon: Layers },
+    { label: 'Frontend', value: 'Frontend', icon: Code2 },
+    { label: 'Machine Learning', value: 'Machine Learning', icon: Brain }
+  ];
+
+  const filteredProjects = activeCategory === 'All' 
+    ? PROJECTS_DATA 
+    : PROJECTS_DATA.filter(p => p.category === activeCategory);
+
+  const INITIAL_COUNT = 6;
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, INITIAL_COUNT);
+  const hasMore = filteredProjects.length > INITIAL_COUNT;
+
+  const handleCategoryChange = (categoryValue) => {
+    setActiveCategory(categoryValue);
+    setShowAll(false);
   };
 
   return (
@@ -182,7 +216,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <motion.span
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -208,81 +242,135 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-xl mx-auto text-textMuted text-sm md:text-base mt-4 font-medium"
           >
-            A collection of production-ready systems, AI pipeline integrations, and full-stack software products.
+            A collection of production frontend interfaces, machine learning pipelines, and full-stack software products.
           </motion.p>
+        </div>
+
+        {/* Category Filter Tabs */}
+        <div className="flex justify-center items-center gap-3 mb-12 flex-wrap">
+          {categories.map((cat) => {
+            const Icon = cat.icon;
+            const isActive = activeCategory === cat.value;
+            return (
+              <button
+                key={cat.value}
+                onClick={() => handleCategoryChange(cat.value)}
+                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-2 border ${
+                  isActive
+                    ? 'bg-primary text-black border-primary shadow-[0_0_20px_rgba(255,215,0,0.3)] scale-105'
+                    : 'glassmorphism text-textMuted border-white/10 hover:text-textLight hover:border-white/20'
+                }`}
+              >
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-black' : 'text-primary'}`} />
+                {cat.label}
+              </button>
+            );
+          })}
         </div>
 
         {/* Project Cards Grid */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {PROJECTS_DATA.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={cardVariants}
-              className="group glassmorphism rounded-2xl border border-glassBorder overflow-hidden hover:border-primary/30 transition-all duration-500 flex flex-col h-full hover:shadow-glass-glow"
-            >
-              {/* Project Banner Area */}
-              <div className="h-48 border-b border-glassBorder overflow-hidden relative group-hover:scale-[1.02] transition-transform duration-500">
-                {project.banner}
-              </div>
+          <AnimatePresence mode="popLayout">
+            {displayedProjects.map((project) => {
+              const BannerIcon = project.bannerIcon || Code2;
+              return (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4 }}
+                  key={project.id}
+                  className="group glassmorphism rounded-2xl border border-glassBorder overflow-hidden hover:border-primary/40 transition-all duration-500 flex flex-col h-full hover:shadow-glass-glow"
+                >
+                  {/* Project Banner Area */}
+                  <div className={`h-44 border-b border-glassBorder relative overflow-hidden bg-gradient-to-br ${project.accentGradient} flex items-center justify-center p-6`}>
+                    <div className="absolute inset-0 grid-bg opacity-15" />
+                    
+                    {/* Category Tag Badge */}
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className={`px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider border ${project.tagBg}`}>
+                        {project.category}
+                      </span>
+                    </div>
 
-              {/* Project Info Area */}
-              <div className="p-6 flex flex-col flex-grow">
-                <span className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1.5 block">
-                  {project.subtitle}
-                </span>
-                
-                <h3 className="font-display font-bold text-xl text-textLight mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                
-                <p className="text-textMuted text-xs md:text-sm leading-relaxed mb-6 flex-grow font-medium">
-                  {project.description}
-                </p>
+                    {/* Banner Visual Icon */}
+                    <div className="relative z-10 p-4 rounded-2xl glassmorphism border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <BannerIcon className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
 
-                {/* Tech Badges */}
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {project.technologies.map((tech) => (
-                    <span 
-                      key={tech} 
-                      className="px-2 py-1 rounded bg-white/50 dark:bg-white/3 border border-glassBorder text-[10px] font-semibold text-textLight"
-                    >
-                      {tech}
+                  {/* Project Info Area */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <span className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1.5 block">
+                      {project.subtitle}
                     </span>
-                  ))}
-                </div>
+                    
+                    <h3 className="font-display font-bold text-xl text-textLight mb-3 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-textMuted text-xs md:text-sm leading-relaxed mb-6 flex-grow font-medium">
+                      {project.description}
+                    </p>
 
-                {/* Card Action Buttons */}
-                <div className="flex items-center gap-4 mt-auto">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-semibold text-textMuted hover:text-white transition-colors cursor-none"
-                  >
-                    <FaGithub className="w-4 h-4" />
-                    GitHub
-                  </a>
-                  
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-cyan-300 transition-colors ml-auto cursor-none"
-                  >
-                    Live Demo
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                    {/* Tech Badges */}
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span 
+                          key={tech} 
+                          className="px-2.5 py-1 rounded bg-white/5 border border-glassBorder text-[10px] font-semibold text-textLight"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Card Action Buttons */}
+                    <div className="flex items-center gap-4 mt-auto pt-2 border-t border-white/5">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-1.5 text-xs font-semibold text-textMuted hover:text-white transition-colors cursor-pointer"
+                      >
+                        <FaGithub className="w-4 h-4" />
+                        GitHub
+                      </a>
+                      
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-cyan-300 transition-colors ml-auto cursor-pointer"
+                      >
+                        Repository
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
         </motion.div>
+
+        {/* View More Projects Button */}
+        {hasMore && (
+          <div className="mt-14 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider bg-white/5 text-textLight border border-white/10 hover:border-primary/50 hover:bg-primary hover:text-black transition-all duration-300 flex items-center justify-center gap-2 mx-auto shadow-lg hover:shadow-primary/20 cursor-pointer"
+            >
+              <span>{showAll ? 'Show Less' : `View More Projects (${filteredProjects.length - INITIAL_COUNT} More)`}</span>
+              {showAll ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            </button>
+          </div>
+        )}
+
       </div>
     </section>
   );

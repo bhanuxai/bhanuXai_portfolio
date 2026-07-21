@@ -48,11 +48,11 @@ export default function CustomCursor() {
       window.addEventListener('mousemove', moveCursor);
       window.addEventListener('mouseover', handleMouseOver);
       
-      // Apply cursor none globally
+      // Keep pointer cursor visible on links, buttons and interactive elements
       const style = document.createElement('style');
       style.innerHTML = `
-        * {
-          cursor: none !important;
+        a, button, input, textarea, select, [role="button"], .cursor-pointer, .cursor-pointer * {
+          cursor: pointer !important;
         }
       `;
       style.id = 'cursor-none-styles';
