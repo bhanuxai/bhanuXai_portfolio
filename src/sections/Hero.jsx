@@ -114,8 +114,8 @@ export default function Hero() {
 
             {/* Secondary Download Resume */}
             <a
-              href="/resume.pdf"
-              download
+              href="/BhanuxaiResume(FRONTEND).pdf"
+              download="BhanuxaiResume(FRONTEND).pdf"
               className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm glassmorphism text-textLight flex items-center justify-center gap-2 cursor-none"
             >
               <FileText className="w-4 h-4" />
