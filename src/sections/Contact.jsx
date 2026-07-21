@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 
 const SOCIALS = [
   { name: 'GitHub', icon: FaGithub, url: 'https://github.com/bhanuxai', color: 'hover:bg-zinc-700 hover:text-white dark:hover:bg-zinc-100 dark:hover:text-black' },
-  { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/bhanu-sesha-sai-', color: 'hover:bg-blue-600 hover:text-white' },
+  { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/bhanu-sesha-sai-/', color: 'hover:bg-blue-600 hover:text-white' },
   { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com', color: 'hover:bg-pink-500 hover:text-white' },
   { name: 'Email', icon: Mail, url: 'mailto:contact@bhanu.ai', color: 'hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-300 dark:hover:text-black' }
 ];

@@ -6,10 +6,10 @@ const TIMELINE_DATA = [
   {
     id: 1,
     title: 'Started B.Tech',
-    date: '2023 - Present',
+    date: '2024 - Present',
     icon: GraduationCap,
     color: 'text-violet-600 dark:text-violet-400 bg-violet-100 dark:bg-violet-950/30 border-violet-500',
-    description: 'Began undergraduate studies in Computer Science and Engineering, specializing in AI & Machine Learning. Focused on computer science core concepts, math foundations, and algorithmic problem-solving.'
+    description: 'Began undergraduate studies in Computer Science and Engineering, specializing in AI & Machine Learning at Lovely Professional University. Focused on computer science core concepts, math foundations, and algorithmic problem-solving.'
   },
   {
     id: 2,

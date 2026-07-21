@@ -11,7 +11,6 @@ import About from './sections/About';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Experience from './sections/Experience';
-import Certifications from './sections/Certifications';
 import GitHubSection from './sections/GitHubSection';
 import CodingProfiles from './sections/CodingProfiles';
 import Gallery from './sections/Gallery';
@@ -99,7 +98,6 @@ export default function App() {
           <Skills />
           <Projects />
           <Experience />
-          <Certifications />
           <GitHubSection />
           <CodingProfiles />
           <Gallery />

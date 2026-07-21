@@ -12,9 +12,9 @@ const PROJECTS_DATA = [
     description: 'An immersive storytelling web experience built with smooth parallax scrolling, dynamic layered animations, and 3D web visuals.',
     technologies: ['React', 'Three.js', 'GSAP', 'Tailwind CSS'],
     github: 'https://github.com/bhanuxai/parallax-storytelling.git',
-    live: 'https://github.com/bhanuxai/parallax-storytelling',
-    previewImage: '/images/previews/parallax.png',
-    domainUrl: 'parallax-storytelling.vercel.app',
+    live: 'https://parallexstorytelling.netlify.app/',
+    previewImage: '/images/previews/Prallax.png',
+    domainUrl: 'parallexstorytelling.netlify.app',
     tagBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30'
   },
   {
@@ -25,22 +25,22 @@ const PROJECTS_DATA = [
     description: 'Machine learning pipeline for candidate shortlisting, scoring technical competencies, and ranking applicants with NLP metrics.',
     technologies: ['Python', 'Scikit-learn', 'NLP', 'Pandas', 'Flask'],
     github: 'https://github.com/bhanuxai/RedRobCandidateRanking-IndiaRuns.git',
-    live: 'https://github.com/bhanuxai/RedRobCandidateRanking-IndiaRuns',
-    previewImage: '/images/previews/ranking.png',
-    domainUrl: 'redrob-candidate-ranking.vercel.app',
+    live: 'https://huggingface.co/spaces/BhanuXai/redrob-ai-candidate-intelligence',
+    previewImage: '/images/previews/red-robai.png',
+    domainUrl: 'huggingface.co/spaces/BhanuXai',
     tagBg: 'bg-purple-500/10 text-purple-400 border-purple-500/30'
   },
   {
     id: 3,
-    category: 'Machine Learning',
-    title: 'Face Mask Detection System',
-    subtitle: 'Real-Time Computer Vision Detector',
-    description: 'Deep learning model trained with MobileNetV2 and OpenCV for automated real-time face mask detection in video streams.',
-    technologies: ['Python', 'TensorFlow', 'OpenCV', 'Keras', 'MobileNetV2'],
-    github: 'https://github.com/bhanuxai/FaceMaskDetectionSystem.git',
-    live: 'https://github.com/bhanuxai/FaceMaskDetectionSystem',
-    previewImage: '/images/previews/mask.png',
-    domainUrl: 'facemask-detector.vercel.app',
+    category: 'Frontend',
+    title: 'Smart Logistics & Delivery Intelligence',
+    subtitle: 'AI-Powered Delivery Routing & Logistics',
+    description: 'An intelligent logistics and delivery management system that optimizes dispatch courier routes, forecasts delivery times, and streamlines order tracking using machine learning integrations.',
+    technologies: ['React', 'Vite', 'Node.js', 'Python', 'Scikit-learn', 'Tailwind'],
+    github: 'https://github.com/bhanuxai/Smart-Logistics-Delivery-Intelligence.git',
+    live: 'https://smart-logistics-delivery-intelligen.vercel.app/',
+    previewImage: '/images/previews/connect.png',
+    domainUrl: 'smart-logistics-delivery-intelligen.vercel.app',
     tagBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
   },
   {
@@ -51,9 +51,9 @@ const PROJECTS_DATA = [
     description: 'A modern community platform for university students to share projects, connect with peers, and collaborate on campus events.',
     technologies: ['React', 'Vite', 'Tailwind CSS', 'Firebase'],
     github: 'https://github.com/bhanuxai/sectra-college-connect.git',
-    live: 'https://github.com/bhanuxai/sectra-college-connect',
-    previewImage: '/images/previews/connect.png',
-    domainUrl: 'sectra-college-connect.vercel.app',
+    live: 'https://sectra-85e9a.web.app/students/dashboard.html',
+    previewImage: '/images/previews/sectra.png',
+    domainUrl: 'sectra-85e9a.web.app',
     tagBg: 'bg-blue-500/10 text-blue-400 border-blue-500/30'
   },
   {
@@ -64,9 +64,9 @@ const PROJECTS_DATA = [
     description: 'Developer tool for instant code snippet creation, real-time syntax highlighting, and quick shareable links.',
     technologies: ['React', 'TypeScript', 'Monaco Editor', 'Tailwind'],
     github: 'https://github.com/bhanuxai/codedrop.git',
-    live: 'https://github.com/bhanuxai/codedrop',
+    live: 'https://codedropp.onrender.com/',
     previewImage: '/images/previews/codedrop.png',
-    domainUrl: 'codedrop-share.vercel.app',
+    domainUrl: 'codedropp.onrender.com',
     tagBg: 'bg-amber-500/10 text-amber-400 border-amber-500/30'
   },
   {
@@ -77,9 +77,9 @@ const PROJECTS_DATA = [
     description: 'Premium web interface featuring smooth micro-animations, glassmorphism design system, and sleek dark mode aesthetics.',
     technologies: ['React', 'Framer Motion', 'Tailwind CSS', 'Vite'],
     github: 'https://github.com/bhanuxai/Apeiron.git',
-    live: 'https://github.com/bhanuxai/Apeiron',
-    previewImage: '/images/previews/cyborg.png',
-    domainUrl: 'apeiron-ui.vercel.app',
+    live: 'https://aetheris-one-plum.vercel.app/',
+    previewImage: '/images/previews/aperion.png',
+    domainUrl: 'aetheris-one-plum.vercel.app',
     tagBg: 'bg-violet-500/10 text-violet-400 border-violet-500/30'
   },
   {
@@ -90,9 +90,9 @@ const PROJECTS_DATA = [
     description: 'High-performance corporate showcase built for global mineral suppliers with responsive product catalogs and dynamic inquiries.',
     technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'JavaScript'],
     github: 'https://github.com/bhanuxai/globalbaritev2.git',
-    live: 'https://github.com/bhanuxai/globalbaritev2',
-    previewImage: '/images/previews/parallax.png',
-    domainUrl: 'globalbarite.vercel.app',
+    live: 'https://www.globalbarites.com/',
+    previewImage: '/images/previews/globalbarites.png',
+    domainUrl: 'globalbarites.com',
     tagBg: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30'
   },
   {
@@ -103,9 +103,9 @@ const PROJECTS_DATA = [
     description: 'Utility web app designed for students to easily calculate semester TGPA/CGPA, forecast grades, and track academic targets.',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Tailwind'],
     github: 'https://github.com/bhanuxai/lputgpacalculatorcodewithbss.git',
-    live: 'https://github.com/bhanuxai/lputgpacalculatorcodewithbss',
-    previewImage: '/images/previews/codedrop.png',
-    domainUrl: 'lpu-gpa-calculator.vercel.app',
+    live: 'https://sectralputgpacalculator.netlify.app/',
+    previewImage: '/images/previews/tgpacalculator.png',
+    domainUrl: 'sectralputgpacalculator.netlify.app',
     tagBg: 'bg-rose-500/10 text-rose-400 border-rose-500/30'
   },
   {
@@ -116,9 +116,9 @@ const PROJECTS_DATA = [
     description: 'Sleek web application with interactive product customizer, cart management, and seamless UI transitions.',
     technologies: ['React', 'Redux Toolkit', 'Tailwind CSS', 'Framer Motion'],
     github: 'https://github.com/bhanuxai/Clutch.git',
-    live: 'https://github.com/bhanuxai/Clutch',
+    live: 'https://clutch-20540114090.asia-southeast1.run.app/',
     previewImage: '/images/previews/connect.png',
-    domainUrl: 'clutch-store.vercel.app',
+    domainUrl: 'clutch-20540114090.asia-southeast1.run.app',
     tagBg: 'bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/30'
   },
   {
@@ -129,9 +129,9 @@ const PROJECTS_DATA = [
     description: 'Full-featured NGO website featuring impact stories, donation drives, volunteer registration, and awareness campaigns.',
     technologies: ['React', 'Tailwind CSS', 'JavaScript', 'HTML5'],
     github: 'https://github.com/bhanuxai/Nisarg-Srishti-Welfare-Foundation-NSWF-.git',
-    live: 'https://github.com/bhanuxai/Nisarg-Srishti-Welfare-Foundation-NSWF-',
-    previewImage: '/images/previews/parallax.png',
-    domainUrl: 'nswf-foundation.org',
+    live: 'https://nisarg-srishti-welfare-foundation-n-sandy.vercel.app/wikipedia_preview.html',
+    previewImage: '/images/previews/nswf.png',
+    domainUrl: 'nisarg-srishti-welfare-foundation-n-sandy.vercel.app',
     tagBg: 'bg-green-500/10 text-green-400 border-green-500/30'
   },
   {
@@ -142,49 +142,10 @@ const PROJECTS_DATA = [
     description: 'Dark futuristic landing page built with glowing neon accents, hero banners, and interactive game library cards.',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
     github: 'https://github.com/bhanuxai/Cyborg-Themed-Landing-Page.git',
-    live: 'https://github.com/bhanuxai/Cyborg-Themed-Landing-Page',
-    previewImage: '/images/previews/cyborg.png',
-    domainUrl: 'cyborg-gaming.vercel.app',
+    live: 'https://cyborg-themed-landing-site.vercel.app/',
+    previewImage: '/images/previews/cyberthemed.png',
+    domainUrl: 'cyborg-themed-landing-site.vercel.app',
     tagBg: 'bg-sky-500/10 text-sky-400 border-sky-500/30'
-  },
-  {
-    id: 12,
-    category: 'Machine Learning',
-    title: 'DoNext AI',
-    subtitle: 'AI Task Orchestrator',
-    description: 'An intelligent planner analyzing team velocity and predicting delivery bottlenecks using machine learning algorithms.',
-    technologies: ['React', 'Framer Motion', 'Node.js', 'TensorFlow.js'],
-    github: 'https://github.com/bhanuxai/donext-ai',
-    live: 'https://donext-ai.vercel.app',
-    previewImage: '/images/previews/ranking.png',
-    domainUrl: 'donext-ai.vercel.app',
-    tagBg: 'bg-violet-500/10 text-violet-400 border-violet-500/30'
-  },
-  {
-    id: 13,
-    category: 'Machine Learning',
-    title: 'Sectra Threat Analytics',
-    subtitle: 'Zero-Trust Threat Visualizer',
-    description: 'A cyber threat visualization platform tracking packet routes in real-time and detecting anomalies using LSTMs.',
-    technologies: ['React', 'GSAP', 'Python', 'FastAPI', 'PyTorch'],
-    github: 'https://github.com/bhanuxai/sectra',
-    live: 'https://sectra-sec.vercel.app',
-    previewImage: '/images/previews/mask.png',
-    domainUrl: 'sectra-sec.vercel.app',
-    tagBg: 'bg-red-500/10 text-red-400 border-red-500/30'
-  },
-  {
-    id: 14,
-    category: 'Machine Learning',
-    title: 'Resume Analyzer',
-    subtitle: 'Automated CV Semantic Parser',
-    description: 'HR analytics model parsing candidate CVs with OCR, extracting skill vectors, and evaluating candidates against job descriptions.',
-    technologies: ['React', 'Gemini API', 'Python', 'MongoDB', 'Tailwind'],
-    github: 'https://github.com/bhanuxai/resume-analyzer',
-    live: 'https://cv-analyser.vercel.app',
-    previewImage: '/images/previews/ranking.png',
-    domainUrl: 'cv-analyser.vercel.app',
-    tagBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
   }
 ];
 
