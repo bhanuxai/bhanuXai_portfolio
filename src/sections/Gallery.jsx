@@ -64,7 +64,7 @@ export default function Gallery() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl md:text-5xl text-white tracking-tight"
+            className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight"
           >
             Workspace &amp; Moments
           </motion.h2>

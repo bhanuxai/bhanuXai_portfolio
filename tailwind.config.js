@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,17 +8,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        bgDark: "#050816",
-        primary: "#7C3AED",
-        accent: "#06B6D4",
-        textLight: "#F8FAFC",
-        textMuted: "#94A3B8",
-        glassBg: "rgba(10, 15, 30, 0.4)",
-        glassBorder: "rgba(255, 255, 255, 0.08)",
+        bgDark: "var(--bg-color)",
+        primary: "var(--primary-color)",
+        accent: "var(--accent-color)",
+        textLight: "var(--text-primary)",
+        textMuted: "var(--text-muted)",
+        glassBg: "var(--glass-bg)",
+        glassBorder: "var(--glass-border)",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Sora", "sans-serif"],
+        sans: ["Space Grotesk", "Inter", "sans-serif"],
+        display: ["Fredoka", "Sora", "sans-serif"],
+        mono: ["Space Mono", "monospace"],
       },
       animation: {
         'spin-slow': 'spin 25s linear infinite',
@@ -32,10 +34,10 @@ export default {
         }
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-        'glass-glow': '0 8px 32px 0 rgba(124, 58, 237, 0.15)',
-        'glow-primary': '0 0 25px rgba(124, 58, 237, 0.3)',
-        'glow-accent': '0 0 25px rgba(6, 182, 212, 0.3)',
+        'glass': 'var(--shadow-glass)',
+        'glass-glow': 'var(--shadow-glass)',
+        'glow-primary': 'none',
+        'glow-accent': 'none',
       },
       backdropBlur: {
         xs: '2px',

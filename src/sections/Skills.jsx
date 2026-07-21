@@ -37,7 +37,7 @@ export default function Skills() {
     { name: 'CSS3', icon: FaCss3Alt, color: 'text-blue-500' },
     { name: 'Tailwind', icon: SiTailwindcss, color: 'text-teal-400' },
     { name: 'Node.js', icon: FaNodeJs, color: 'text-green-500' },
-    { name: 'Express', icon: SiExpress, color: 'text-slate-300' },
+    { name: 'Express', icon: SiExpress, color: 'dark:text-slate-300 text-slate-600' },
   ].map(s => {
     const Icon = s.icon;
     return {
@@ -55,10 +55,10 @@ export default function Skills() {
     { name: 'MongoDB', icon: SiMongodb, color: 'text-emerald-500' },
     { name: 'Firebase', icon: SiFirebase, color: 'text-amber-500' },
     { name: 'Git', icon: FaGitAlt, color: 'text-orange-600' },
-    { name: 'GitHub', icon: FaGithub, color: 'text-white' },
+    { name: 'GitHub', icon: FaGithub, color: 'text-textLight' },
     { name: 'Docker', icon: FaDocker, color: 'text-blue-400' },
     { name: 'VS Code', icon: VscVscode, color: 'text-blue-500' },
-    { name: 'Linux', icon: FaLinux, color: 'text-slate-200' },
+    { name: 'Linux', icon: FaLinux, color: 'dark:text-slate-200 text-slate-700' },
   ].map(s => {
     const Icon = s.icon;
     return {
@@ -73,9 +73,7 @@ export default function Skills() {
   });
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-bgDark">
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full filter blur-[120px] pointer-events-none" />
+    <section id="skills" className="py-24 relative overflow-hidden bg-transparent">
 
       <div className="max-w-7xl mx-auto px-6 mb-16">
         {/* Section Title */}
@@ -94,7 +92,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl md:text-5xl text-white tracking-tight"
+            className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight"
           >
             Skills &amp; Technologies
           </motion.h2>
@@ -120,7 +118,7 @@ export default function Skills() {
           gap={24}
           pauseOnHover
           fadeOut
-          fadeOutColor="#050816"
+          fadeOutColor="var(--bg-color)"
         />
         <LogoLoop
           logos={row2}
@@ -130,7 +128,7 @@ export default function Skills() {
           gap={24}
           pauseOnHover
           fadeOut
-          fadeOutColor="#050816"
+          fadeOutColor="var(--bg-color)"
         />
         <LogoLoop
           logos={row3}
@@ -140,7 +138,7 @@ export default function Skills() {
           gap={24}
           pauseOnHover
           fadeOut
-          fadeOutColor="#050816"
+          fadeOutColor="var(--bg-color)"
         />
       </div>
     </section>

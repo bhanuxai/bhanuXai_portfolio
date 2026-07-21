@@ -38,18 +38,7 @@
 }
 
 .pc-behind {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at var(--pointer-x) var(--pointer-y),
-    var(--behind-glow-color) 0%,
-    transparent var(--behind-glow-size)
-  );
-  filter: blur(50px) saturate(1.1);
-  opacity: calc(0.8 * var(--card-opacity));
-  transition: opacity 200ms ease;
+  display: none !important;
 }
 
 .pc-card-wrapper:hover,
@@ -62,18 +51,17 @@
   max-height: 540px;
   display: grid;
   aspect-ratio: 0.718;
-  border-radius: var(--card-radius);
+  border-radius: 4px !important;
   position: relative;
-  background-blend-mode: color-dodge, normal, normal, normal;
-  animation: glow-bg 12s linear infinite;
-  box-shadow: rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px)
-    calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px;
+  background-blend-mode: normal;
+  animation: none !important;
+  box-shadow: var(--shadow-glass) !important;
   transition: transform 1s ease;
   transform: translateZ(0) rotateX(0deg) rotateY(0deg);
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--bg-card) !important;
   backface-visibility: hidden;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 3px solid var(--glass-border) !important;
 }
 
 .pc-card:hover,
@@ -586,6 +574,52 @@
   .pc-contact-btn {
     padding: 4px 8px;
     font-size: 9px;
-    border-radius: 50px;
   }
+}
+
+/* Neo-Brutalist ProfileCard Overrides to Disable Hologram Glows & Refactor Elements */
+.pc-shine, .pc-glare {
+  display: none !important;
+}
+
+.pc-inside {
+  background-image: none !important;
+  background-color: var(--bg-card) !important;
+}
+
+.pc-user-info {
+  background: var(--bg-color) !important;
+  border: 2px solid var(--glass-border) !important;
+  border-radius: 4px !important;
+  color: var(--text-primary) !important;
+  backdrop-filter: none !important;
+}
+
+.pc-handle {
+  color: var(--text-primary) !important;
+}
+
+.pc-status {
+  color: var(--text-muted) !important;
+}
+
+.pc-contact-btn {
+  background: var(--primary-color) !important;
+  color: #000000 !important;
+  border: 2px solid var(--glass-border) !important;
+  border-radius: 4px !important;
+  box-shadow: 2px 2px 0px 0px var(--glass-border) !important;
+  backdrop-filter: none !important;
+}
+
+.pc-contact-btn:hover {
+  background: var(--primary-color) !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0px 0px var(--glass-border) !important;
+}
+
+.pc-details h3, .pc-details p {
+  -webkit-text-fill-color: initial !important;
+  background-image: none !important;
+  color: var(--text-primary) !important;
 }

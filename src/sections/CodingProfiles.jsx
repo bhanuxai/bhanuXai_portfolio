@@ -121,7 +121,7 @@ export default function CodingProfiles() {
   }, []);
 
   return (
-    <section id="profiles" className="py-24 relative overflow-hidden bg-bgDark/20">
+    <section id="profiles" className="py-24 relative overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
@@ -140,7 +140,7 @@ export default function CodingProfiles() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl md:text-5xl text-white tracking-tight"
+            className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight"
           >
             Coding &amp; Professional Profiles
           </motion.h2>
@@ -156,7 +156,7 @@ export default function CodingProfiles() {
         </div>
 
         {/* Circular WebGL Gallery container */}
-        <div className="w-full h-[380px] md:h-[420px] relative border border-white/5 rounded-3xl bg-white/1 backdrop-blur-md overflow-hidden select-none">
+        <div className="w-full h-[380px] md:h-[420px] relative border-[3px] border-black dark:border-white rounded bg-white dark:bg-zinc-900 overflow-hidden select-none shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_var(--primary-color)]">
           {slides.length > 0 && (
             <CircularGallery
               items={slides}
@@ -181,7 +181,7 @@ export default function CodingProfiles() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white border border-accent/40 bg-accent/10 hover:bg-accent/25 shadow-glow-accent hover:shadow-accent/40 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
+              className="px-8 py-3.5 rounded font-extrabold text-xs uppercase tracking-wider bg-accent text-black border-[3px] border-black dark:border-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] transition-all flex items-center gap-2 group cursor-pointer"
             >
               Open {slides[activeIndex].text} Profile
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

@@ -8,7 +8,7 @@ const TIMELINE_DATA = [
     title: 'Started B.Tech',
     date: '2023 - Present',
     icon: GraduationCap,
-    color: 'text-violet-400 border-violet-500/20 bg-violet-500/10 shadow-glow-primary',
+    color: 'text-violet-600 dark:text-violet-400 bg-violet-100 dark:bg-violet-950/30 border-violet-500',
     description: 'Began undergraduate studies in Computer Science and Engineering, specializing in AI & Machine Learning. Focused on computer science core concepts, math foundations, and algorithmic problem-solving.'
   },
   {
@@ -16,7 +16,7 @@ const TIMELINE_DATA = [
     title: 'Learned Web Development',
     date: 'Early 2024',
     icon: Terminal,
-    color: 'text-cyan-400 border-cyan-500/20 bg-cyan-500/10 shadow-glow-accent',
+    color: 'text-cyan-600 dark:text-cyan-400 bg-cyan-100 dark:bg-cyan-950/30 border-cyan-500',
     description: 'Mastered modern CSS frameworks (Tailwind), ES6 JavaScript, and Single Page Application design using React and Vite. Focused on building clean, accessible, and fast frontends.'
   },
   {
@@ -24,7 +24,7 @@ const TIMELINE_DATA = [
     title: 'Started AI Journey',
     date: 'Mid 2024',
     icon: BrainCircuit,
-    color: 'text-indigo-400 border-indigo-500/20 bg-indigo-500/10 shadow-glow-primary',
+    color: 'text-indigo-600 dark:text-indigo-400 bg-indigo-100 dark:bg-indigo-950/30 border-indigo-500',
     description: 'Deep-dived into core AI/ML mechanics, training data pipelines, feature selection, and optimization methodologies. Engineered first custom prediction structures with NumPy and Scikit-Learn.'
   },
   {
@@ -32,7 +32,7 @@ const TIMELINE_DATA = [
     title: 'Built Multiple Projects',
     date: 'Late 2024',
     icon: Briefcase,
-    color: 'text-emerald-400 border-emerald-500/20 bg-emerald-500/10 shadow-glow-accent',
+    color: 'text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/30 border-emerald-500',
     description: 'Engineered full-stack applications with AI backend processors. Built and deployed custom semantic CV scrapers, cloud document engines, and drone route simulation utilities.'
   },
   {
@@ -40,7 +40,7 @@ const TIMELINE_DATA = [
     title: 'Hackathons',
     date: '2025',
     icon: Trophy,
-    color: 'text-amber-400 border-amber-500/20 bg-amber-500/10 shadow-amber-500/10',
+    color: 'text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/30 border-amber-500',
     description: 'Participated in fast-paced code sprints and hackathons. Collaborated in small groups to build, test, and present functional AI prototypes addressing real-world issues under tight time constraints.'
   },
   {
@@ -48,16 +48,14 @@ const TIMELINE_DATA = [
     title: 'Open Source Contributions',
     date: '2025 - Present',
     icon: GitMerge,
-    color: 'text-rose-400 border-rose-500/20 bg-rose-500/10 shadow-rose-500/10',
+    color: 'text-rose-600 dark:text-rose-400 bg-rose-100 dark:bg-rose-950/30 border-rose-500',
     description: 'Actively contributing to open-source software and tools on GitHub. Reviewing PRs, optimizing runtime scripts, and writing documentation to help grow the developer ecosystem.'
   }
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-bgDark">
-      {/* Background glowing blob */}
-      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-accent/5 rounded-full filter blur-[120px] pointer-events-none" />
+    <section id="experience" className="py-24 relative overflow-hidden bg-transparent">
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
@@ -76,7 +74,7 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl md:text-5xl text-white tracking-tight"
+            className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight"
           >
             Experience &amp; Milestones
           </motion.h2>
@@ -116,7 +114,7 @@ export default function Experience() {
                         className="glassmorphism rounded-2xl p-6 border border-glassBorder hover:border-primary/30 transition-all duration-300"
                       >
                         <span className="text-xs font-mono font-bold text-primary tracking-widest">{item.date}</span>
-                        <h3 className="font-display font-bold text-xl text-white mt-1.5 mb-3">{item.title}</h3>
+                        <h3 className="font-display font-bold text-xl text-textLight mt-1.5 mb-3">{item.title}</h3>
                         <p className="text-textMuted text-xs md:text-sm leading-relaxed font-medium">{item.description}</p>
                       </motion.div>
                     )}
@@ -129,7 +127,7 @@ export default function Experience() {
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.1 }}
-                      className={`w-10 h-10 rounded-xl border flex items-center justify-center ${item.color}`}
+                      className={`w-10 h-10 rounded-none border-[3px] border-black dark:border-white flex items-center justify-center ${item.color}`}
                     >
                       <Icon className="w-5 h-5" />
                     </motion.div>
@@ -146,7 +144,7 @@ export default function Experience() {
                         className="glassmorphism rounded-2xl p-6 border border-glassBorder hover:border-accent/30 transition-all duration-300"
                       >
                         <span className="text-xs font-mono font-bold text-accent tracking-widest">{item.date}</span>
-                        <h3 className="font-display font-bold text-xl text-white mt-1.5 mb-3">{item.title}</h3>
+                        <h3 className="font-display font-bold text-xl text-textLight mt-1.5 mb-3">{item.title}</h3>
                         <p className="text-textMuted text-xs md:text-sm leading-relaxed font-medium">{item.description}</p>
                       </motion.div>
                     )}

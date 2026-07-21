@@ -95,7 +95,7 @@ export default function About() {
             <span className="text-xs font-semibold tracking-widest text-primary uppercase mb-2 block">
               About Me
             </span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-white tracking-tight">
+            <h2 className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight">
               Designing the Future with <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI & ML</span>
             </h2>
           </div>
@@ -118,16 +118,14 @@ export default function About() {
           <motion.div variants={cardVariants} className="md:col-span-2">
             <TiltCard className="h-full flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6 shadow-glow-primary">
+                <div className="w-12 h-12 rounded bg-primary text-black border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000000] dark:shadow-[2px_2px_0px_0px_#FFFFFF] flex items-center justify-center mb-6">
                   <Brain className="w-6 h-6" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white mb-4">
+                <h3 className="font-display font-black text-2xl text-textLight mb-4">
                   AI & ML Student
                 </h3>
                 <p className="text-textMuted leading-relaxed text-sm md:text-base">
-                  Currently pursuing a Bachelor of Technology specializing in Artificial Intelligence and Machine Learning. 
-                  My academic journey involves deep-diving into neural networks, reinforcement learning, computer vision, 
-                  natural language processing, and advanced deep learning cognitive architectures.
+                  Currently pursuing a Bachelor of Technology specializing in Artificial Intelligence and Machine Learning at Lovely Professional University (LPU) (started August 2024). My academic journey involves deep-diving into neural networks, reinforcement learning, computer vision, natural language processing, and advanced deep learning cognitive architectures.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-wider">
@@ -140,10 +138,10 @@ export default function About() {
           <motion.div variants={cardVariants}>
             <TiltCard className="h-full flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-6 shadow-glow-accent">
+                <div className="w-12 h-12 rounded bg-accent text-black border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000000] dark:shadow-[2px_2px_0px_0px_#FFFFFF] flex items-center justify-center mb-6">
                   <Cpu className="w-6 h-6" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white mb-4">
+                <h3 className="font-display font-black text-2xl text-textLight mb-4">
                   Product Builder
                 </h3>
                 <p className="text-textMuted leading-relaxed text-sm">
@@ -159,10 +157,10 @@ export default function About() {
           <motion.div variants={cardVariants}>
             <TiltCard className="h-full flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 mb-6">
+                <div className="w-12 h-12 rounded bg-amber-400 text-black border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000000] dark:shadow-[2px_2px_0px_0px_#FFFFFF] flex items-center justify-center mb-6">
                   <Trophy className="w-6 h-6" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white mb-4">
+                <h3 className="font-display font-black text-2xl text-textLight mb-4">
                   Hackathon Competitor
                 </h3>
                 <p className="text-textMuted leading-relaxed text-sm">
@@ -178,10 +176,10 @@ export default function About() {
           <motion.div variants={cardVariants} className="md:col-span-2">
             <TiltCard className="h-full flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500 mb-6">
+                <div className="w-12 h-12 rounded bg-emerald-400 text-black border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000000] dark:shadow-[2px_2px_0px_0px_#FFFFFF] flex items-center justify-center mb-6">
                   <GitBranch className="w-6 h-6" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white mb-4">
+                <h3 className="font-display font-black text-2xl text-textLight mb-4">
                   Open-Source Enthusiast
                 </h3>
                 <p className="text-textMuted leading-relaxed text-sm md:text-base">
@@ -201,10 +199,10 @@ export default function About() {
           <motion.div variants={cardVariants} className="md:col-span-3">
             <TiltCard className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
               <div className="max-w-2xl">
-                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-500 mb-6 shadow-glow-primary">
+                <div className="w-12 h-12 rounded bg-sky-400 text-black border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000000] dark:shadow-[2px_2px_0px_0px_#FFFFFF] flex items-center justify-center mb-6">
                   <Layers className="w-6 h-6" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white mb-4">
+                <h3 className="font-display font-black text-2xl text-textLight mb-4">
                   Full-Stack Developer
                 </h3>
                 <p className="text-textMuted leading-relaxed text-sm">
@@ -216,7 +214,7 @@ export default function About() {
               </div>
               <div className="flex flex-wrap gap-2 md:max-w-sm">
                 {['React', 'Vite', 'Tailwind', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'Git'].map((tech) => (
-                  <span key={tech} className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-white hover:border-primary/40 transition-colors">
+                  <span key={tech} className="px-3 py-1.5 rounded text-xs font-extrabold bg-white dark:bg-zinc-800 border-2 border-black dark:border-white text-textLight shadow-[2px_2px_0px_0px_#000000] dark:shadow-[2px_2px_0px_0px_#FFFFFF] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5">
                     {tech}
                   </span>
                 ))}

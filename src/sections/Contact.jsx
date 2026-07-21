@@ -5,10 +5,10 @@ import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const SOCIALS = [
-  { name: 'GitHub', icon: FaGithub, url: 'https://github.com/bhanuxai', color: 'hover:text-white hover:bg-white/5 border-white/10' },
-  { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/bhanu-sesha-sai-', color: 'hover:text-blue-400 hover:bg-blue-500/5 border-blue-500/20' },
-  { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com', color: 'hover:text-pink-400 hover:bg-pink-500/5 border-pink-500/20' },
-  { name: 'Email', icon: Mail, url: 'mailto:contact@bhanu.ai', color: 'hover:text-accent hover:bg-accent/5 border-accent/20' }
+  { name: 'GitHub', icon: FaGithub, url: 'https://github.com/bhanuxai', color: 'hover:bg-zinc-700 hover:text-white dark:hover:bg-zinc-100 dark:hover:text-black' },
+  { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/bhanu-sesha-sai-', color: 'hover:bg-blue-600 hover:text-white' },
+  { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com', color: 'hover:bg-pink-500 hover:text-white' },
+  { name: 'Email', icon: Mail, url: 'mailto:contact@bhanu.ai', color: 'hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-300 dark:hover:text-black' }
 ];
 
 export default function Contact() {
@@ -56,10 +56,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full filter blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full filter blur-[100px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
@@ -78,7 +74,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl md:text-5xl text-white tracking-tight"
+            className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight"
           >
             Get In Touch
           </motion.h2>
@@ -96,7 +92,7 @@ export default function Contact() {
             className="lg:col-span-2 space-y-8"
           >
             <div className="space-y-4">
-              <h3 className="font-display font-bold text-2xl text-white">
+              <h3 className="font-display font-bold text-2xl text-textLight">
                 Let's discuss a project or opportunity
               </h3>
               <p className="text-textMuted text-sm md:text-base leading-relaxed font-medium">
@@ -108,24 +104,24 @@ export default function Contact() {
             {/* Direct Details */}
             <div className="space-y-4 font-medium text-sm text-textMuted">
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-primary shrink-0 shadow-inner">
+                <div className="w-10 h-10 rounded bg-primary text-black border-2 border-black dark:border-white flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
                   <Mail className="w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-textMuted block">Email Me</span>
-                  <a href="mailto:contact@bhanu.ai" className="text-white hover:text-primary transition-colors cursor-none font-semibold">
+                  <span className="text-[10px] uppercase font-extrabold text-textMuted block">Email Me</span>
+                  <a href="mailto:contact@bhanu.ai" className="text-textLight hover:text-primary transition-colors cursor-none font-bold underline">
                     contact@bhanu.ai
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-accent shrink-0 shadow-inner">
+                <div className="w-10 h-10 rounded bg-accent text-black border-2 border-black dark:border-white flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
                   <MapPin className="w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-textMuted block">Location</span>
-                  <span className="text-white font-semibold">India</span>
+                  <span className="text-[10px] uppercase font-extrabold text-textMuted block">Location</span>
+                  <span className="text-textLight font-bold">India</span>
                 </div>
               </div>
             </div>
@@ -142,7 +138,7 @@ export default function Contact() {
                       href={soc.url}
                       target="_blank"
                       rel="noreferrer"
-                      className={`w-11 h-11 rounded-xl border flex items-center justify-center text-textMuted transition-all duration-300 cursor-none ${soc.color}`}
+                      className={`w-11 h-11 rounded border-[3px] border-black dark:border-white bg-white dark:bg-zinc-800 flex items-center justify-center text-textLight transition-all duration-200 cursor-none shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[5px_5px_0px_0px_rgba(255,255,255,1)] ${soc.color}`}
                       title={soc.name}
                     >
                       <Icon className="w-5 h-5" />
@@ -265,7 +261,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="w-full sm:w-auto ml-auto px-8 py-4 rounded-full font-semibold text-sm bg-gradient-to-r from-primary to-accent text-white flex items-center justify-center gap-2 glow-button hover:scale-105 active:scale-95 disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 shadow-glow-primary hover:shadow-glow-accent cursor-none"
+                  className="w-full sm:w-auto ml-auto px-8 py-4 font-bold text-sm bg-primary text-black flex items-center justify-center gap-2 glow-button disabled:opacity-50 disabled:pointer-events-none cursor-none"
                 >
                   {status === 'sending' ? (
                     <>

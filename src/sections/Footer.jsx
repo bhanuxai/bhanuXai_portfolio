@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
-import Beams from '../components/Beams';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -8,7 +7,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-glassBorder bg-bgDark relative overflow-hidden">
+    <footer className="border-t-[3px] border-black dark:border-white bg-transparent relative overflow-hidden">
       
       {/* Decorative Scrolling Marquee */}
       <div className="py-4 border-b border-glassBorder/40 bg-white/[0.01] overflow-hidden select-none pointer-events-none">
@@ -36,26 +35,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* 3D Beams Background */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
-        <Beams
-          beamWidth={2.5}
-          beamHeight={40}
-          beamNumber={15}
-          lightColor="#06b6d4"
-          speed={1.2}
-          noiseIntensity={1.3}
-          scale={0.16}
-          rotation={18}
-          backgroundColor="#050816"
-        />
-      </div>
+
 
       <div className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
         
         {/* Logo/Info */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
-          <div className="font-display font-extrabold text-lg text-white">
+          <div className="font-display font-extrabold text-lg text-textLight">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Bhanu</span>
             <span className="text-textLight font-light">Xai</span>
           </div>
@@ -72,7 +58,7 @@ export default function Footer() {
         {/* Back to Top */}
         <button
           onClick={scrollToTop}
-          className="w-10 h-10 rounded-xl glassmorphism border border-glassBorder hover:border-primary/40 text-textMuted hover:text-white flex items-center justify-center transition-all duration-300 cursor-none group shadow-inner"
+          className="w-10 h-10 glassmorphism text-textMuted hover:text-textLight flex items-center justify-center cursor-none group"
           title="Back to Top"
         >
           <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />

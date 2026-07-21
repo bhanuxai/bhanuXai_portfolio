@@ -65,10 +65,10 @@ export default function Navbar({ onLogoClick }) {
       logoAlt="BhanuXai Logo"
       items={navItems}
       activeHref={`#${activeSection}`}
-      pillColor="rgba(255, 255, 255, 0.03)"
-      baseColor="rgba(5, 8, 22, 0.55)"
-      pillTextColor="#94a3b8"
-      hoveredPillTextColor="#ffffff"
+      pillColor="var(--nav-pill-bg)"
+      baseColor="var(--nav-bg)"
+      pillTextColor="var(--nav-text)"
+      hoveredPillTextColor="var(--nav-hover-text)"
       onLogoClick={onLogoClick}
       initialLoadAnimation={true}
     />

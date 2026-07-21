@@ -59,11 +59,11 @@ export default function GitHubSection() {
 
   const getColorClass = (level) => {
     switch (level) {
-      case 1: return 'bg-violet-950/40 border border-violet-500/10';
-      case 2: return 'bg-violet-850/60 border border-violet-500/20';
-      case 3: return 'bg-violet-600/70 border border-violet-500/40 shadow-glow-primary/20';
+      case 1: return 'bg-primary/20 border border-primary/10';
+      case 2: return 'bg-primary/45 border border-primary/20';
+      case 3: return 'bg-primary/70 border border-primary/30';
       case 4: return 'bg-primary border border-primary/50 shadow-glow-primary/40';
-      default: return 'bg-white/3 border border-white/5';
+      default: return 'bg-black/[0.04] dark:bg-white/3 border border-glassBorder/40';
     }
   };
 
@@ -90,7 +90,7 @@ export default function GitHubSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl md:text-5xl text-white tracking-tight"
+            className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight"
           >
             Open Source Footprint
           </motion.h2>
@@ -108,7 +108,7 @@ export default function GitHubSection() {
             className="lg:col-span-2 glassmorphism rounded-2xl p-6 border border-glassBorder flex flex-col justify-between"
           >
             <div>
-              <h3 className="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <h3 className="font-display font-bold text-lg text-textLight mb-2 flex items-center gap-2">
                 <GitFork className="w-5 h-5 text-primary" />
                 Contributions Calendar
               </h3>
@@ -139,10 +139,10 @@ export default function GitHubSection() {
               <span>Simulated logs synced live</span>
               <div className="flex items-center gap-1.5">
                 <span>Less</span>
-                <div className="w-2.5 h-2.5 rounded-sm bg-white/3 border border-white/5" />
-                <div className="w-2.5 h-2.5 rounded-sm bg-violet-950/40 border border-violet-500/10" />
-                <div className="w-2.5 h-2.5 rounded-sm bg-violet-850/60 border border-violet-500/20" />
-                <div className="w-2.5 h-2.5 rounded-sm bg-violet-600/70 border border-violet-500/40" />
+                <div className="w-2.5 h-2.5 rounded-sm bg-black/[0.04] dark:bg-white/3 border border-glassBorder/40" />
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary/20 border border-primary/10" />
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary/45 border border-primary/20" />
+                <div className="w-2.5 h-2.5 rounded-sm bg-primary/70 border border-primary/30" />
                 <div className="w-2.5 h-2.5 rounded-sm bg-primary border border-primary/50" />
                 <span>More</span>
               </div>
@@ -158,7 +158,7 @@ export default function GitHubSection() {
             className="glassmorphism rounded-2xl p-6 border border-glassBorder flex flex-col justify-between"
           >
             <div>
-              <h3 className="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <h3 className="font-display font-bold text-lg text-textLight mb-2 flex items-center gap-2">
                 <Eye className="w-5 h-5 text-accent" />
                 Most Used Languages
               </h3>
@@ -220,7 +220,7 @@ export default function GitHubSection() {
                 </div>
                 <div>
                   <span className="text-[10px] uppercase font-bold text-textMuted block">{stat.label}</span>
-                  <span className="text-lg md:text-xl font-bold text-white font-mono">{stat.value}</span>
+                  <span className="text-lg md:text-xl font-bold text-textLight font-mono">{stat.value}</span>
                 </div>
               </motion.div>
             );
@@ -232,7 +232,7 @@ export default function GitHubSection() {
       {/* Tooltip Overlay */}
       {tooltip.show && (
         <div
-          className="fixed z-[9999] px-3 py-1.5 rounded-lg glassmorphism text-[10px] font-mono text-white font-semibold border border-white/10 pointer-events-none -translate-x-1/2"
+          className="fixed z-[9999] px-3 py-1.5 rounded-lg glassmorphism text-[10px] font-mono text-textLight font-semibold border border-glassBorder pointer-events-none -translate-x-1/2"
           style={{ left: tooltip.x, top: tooltip.y }}
         >
           {tooltip.text}

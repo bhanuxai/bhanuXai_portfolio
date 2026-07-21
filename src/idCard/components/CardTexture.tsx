@@ -52,15 +52,15 @@ export default function CardTexture({ firstName, lastName, userId, batch, batchI
             </mesh>
 
             <group position={[256, 360, 0]}>
-                <CreateText fontSize={110} lineHeight={.9} setTransform={(e, width, height) => e.position.set(-230 + width! / 2, 60 - height! / 2, 0)}               >
+                <CreateText fontSize={110} color={"#000000"} lineHeight={.9} setTransform={(e, width, height) => e.position.set(-230 + width! / 2, 60 - height! / 2, 0)}               >
                     {`${firstName} ${lastName}`}
                 </CreateText>
 
                 <CreateText
                     fontSize={100}
-                    color={"#83accc"}
+                    color={"#FACC15"}
 
-                    fillOpacity={.15}
+                    fillOpacity={.45}
                     setTransform={(e, width) => {
                         e.position.set(225, 260 - width! / 2260 - width! / 2, 0)
                         e.rotation.z = -Math.PI / 2
@@ -72,20 +72,20 @@ export default function CardTexture({ firstName, lastName, userId, batch, batchI
                 <group position={[0, 85, 0.1]}>
                     <mesh position={[266, 0, 0]}>
                         <planeGeometry args={[20, 400]} />
-                        <meshBasicMaterial color='#fff' />
+                        <meshBasicMaterial color="#8B5CF6" />
                     </mesh>
 
                     <mesh position={[256, 0, 0]}>
                         <planeGeometry args={[5, 400]} />
-                        <meshBasicMaterial color='#242424' />
+                        <meshBasicMaterial color='#000000' />
                     </mesh>
                 </group>
 
                 <CreateText
                     fontSize={58}
                     fillOpacity={0}
-                    strokeColor={"#77b1dd"}
-                    strokeWidth={1.5}
+                    strokeColor={"#000000"}
+                    strokeWidth={2}
                     lineHeight={.9}
                     setTransform={(e, width, height) => e.position.set(-230 + width! / 2, (height! / 2) + 110, 0)}
                 >
@@ -93,7 +93,7 @@ export default function CardTexture({ firstName, lastName, userId, batch, batchI
                 </CreateText>
 
                 <CreateText
-                    color={"#242424"}
+                    color={"#000000"}
                     fontSize={24}
                     font="/font/ApfelGrotezk.otf"
                     setTransform={(e, width, height) => e.position.set(-230 + width! / 2, (360 - (height! / 2)) - 25, 0)}
@@ -102,7 +102,7 @@ export default function CardTexture({ firstName, lastName, userId, batch, batchI
                 </CreateText>
 
                 <CreateText
-                    color={"#242424"}
+                    color={"#000000"}
                     fontSize={24}
                     font="/font/ApfelGrotezk.otf"
                     setTransform={(e, width, height) => e.position.set(230 - width! / 2, (360 - (height! / 2)) - 25, 0)}

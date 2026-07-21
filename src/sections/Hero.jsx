@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, FileText, Send, Code } from 'lucide-react';
 import Lanyard from '../components/Lanyard';
-import DarkVeil from '../components/DarkVeil';
 import SplitText from '../components/SplitText';
 import RotatingText from '../components/RotatingText';
 
@@ -22,19 +21,8 @@ export default function Hero() {
     <section 
       id="home" 
       ref={containerRef}
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-24 md:py-0"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-24 md:py-0 bg-transparent"
     >
-      {/* DarkVeil Background Shader */}
-      <div className="absolute inset-0 z-0 pointer-events-none w-full h-full">
-        <DarkVeil
-          hueShift={0}
-          noiseIntensity={0}
-          scanlineIntensity={0}
-          speed={0.5}
-          scanlineFrequency={0}
-          warpAmount={0}
-        />
-      </div>
 
       {/* Main Content Area */}
       <div className="relative max-w-7xl mx-auto px-6 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full mt-12 lg:mt-0">
@@ -46,7 +34,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism text-xs font-semibold tracking-wider text-accent uppercase mb-6 border border-accent/20"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism text-xs font-semibold tracking-wider dark:text-accent text-black uppercase mb-6 border dark:border-accent/20 border-black/10"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
@@ -59,7 +47,7 @@ export default function Hero() {
           <h1 className="font-display font-black text-5xl md:text-7xl xl:text-8xl tracking-tight leading-none mb-6">
             <SplitText
               text="Bhanu Sesha Sai"
-              className="text-reveal text-white mb-2"
+              className="text-reveal text-textLight mb-2"
               delay={50}
               duration={1.25}
               ease="power3.out"
@@ -83,7 +71,7 @@ export default function Hero() {
             I specialize in{" "}
             <RotatingText
               texts={['AI Research', 'Neural Networks', 'Agentic Systems', 'Full-Stack Apps']}
-              mainClassName="px-2.5 py-0.5 bg-accent/15 border border-accent/25 text-accent rounded-lg font-mono inline-flex overflow-hidden"
+              mainClassName="px-2.5 py-0.5 bg-accent/15 border-2 border-accent text-accent rounded-none font-mono inline-flex overflow-hidden"
               staggerFrom="last"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -118,7 +106,7 @@ export default function Hero() {
             {/* Primary View Projects */}
             <button
               onClick={() => handleScrollTo('#projects')}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-full font-semibold text-sm bg-gradient-to-r from-primary to-accent text-white flex items-center justify-center gap-2 glow-button hover:scale-105 active:scale-95 transition-all duration-300 shadow-glow-primary hover:shadow-glow-accent cursor-none"
+              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm bg-primary text-black flex items-center justify-center gap-2 glow-button cursor-none"
             >
               <Code className="w-4 h-4" />
               View Projects
@@ -128,16 +116,16 @@ export default function Hero() {
             <a
               href="/resume.pdf"
               download
-              className="w-full sm:w-auto px-6 py-3.5 rounded-full font-semibold text-sm glassmorphism text-white flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95 transition-all duration-300 cursor-none"
+              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm glassmorphism text-textLight flex items-center justify-center gap-2 cursor-none"
             >
               <FileText className="w-4 h-4" />
               Download Resume
             </a>
 
-            {/* Secondary Contact */}
+            {/* Contact */}
             <button
               onClick={() => handleScrollTo('#contact')}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-full font-semibold text-sm text-textMuted hover:text-white flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all duration-300 cursor-none"
+              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm text-textMuted hover:text-textLight hover:underline flex items-center justify-center gap-2 cursor-none"
             >
               <Send className="w-4 h-4" />
               Contact

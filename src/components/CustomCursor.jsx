@@ -76,29 +76,29 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Outer Glow Ring */}
+      {/* Outer Brutalist Square */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] border border-cyan-500/60 mix-blend-screen shadow-glow-accent"
+        className="fixed top-0 left-0 rounded-none pointer-events-none z-[9999] border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
-          width: hovered ? 64 : 32,
-          height: hovered ? 64 : 32,
-          backgroundColor: hovered ? 'rgba(6, 182, 212, 0.1)' : 'rgba(6, 182, 212, 0)',
+          width: hovered ? 48 : 24,
+          height: hovered ? 48 : 24,
+          backgroundColor: hovered ? 'var(--primary-color)' : 'transparent',
         }}
       />
-      {/* Inner Dot */}
+      {/* Inner Dot Square */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow-glow-primary"
+        className="fixed top-0 left-0 rounded-none pointer-events-none z-[9999] bg-accent border border-black dark:border-white"
         style={{
           x: cursorX,
           y: cursorY,
           translateX: '-50%',
           translateY: '-50%',
-          width: 8,
-          height: 8,
+          width: 6,
+          height: 6,
         }}
       />
     </>

@@ -13,7 +13,7 @@ const PROJECTS_DATA = [
     github: 'https://github.com/bhanuxai/donext-ai',
     live: 'https://donext-ai.vercel.app',
     banner: (
-      <div className="w-full h-full bg-gradient-to-br from-violet-600/30 to-indigo-900/40 relative flex items-center justify-center overflow-hidden">
+      <div className="w-full h-full bg-violet-200 dark:bg-violet-950 relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="flex flex-col gap-2.5 w-3/4 p-4 rounded-xl glassmorphism border border-white/10 shadow-lg relative z-10">
           <div className="flex items-center gap-2 border-b border-white/5 pb-2">
@@ -38,7 +38,7 @@ const PROJECTS_DATA = [
     github: 'https://github.com/bhanuxai/sectra',
     live: 'https://sectra-sec.vercel.app',
     banner: (
-      <div className="w-full h-full bg-gradient-to-br from-red-950/20 to-cyan-900/30 relative flex items-center justify-center overflow-hidden">
+      <div className="w-full h-full bg-rose-200 dark:bg-rose-950 relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-10" />
         <div className="relative w-36 h-36 border border-white/5 rounded-full flex items-center justify-center">
           <div className="absolute inset-2 border border-cyan-500/10 rounded-full animate-spin-slow" />
@@ -58,7 +58,7 @@ const PROJECTS_DATA = [
     github: 'https://github.com/bhanuxai/resume-analyzer',
     live: 'https://cv-analyser.vercel.app',
     banner: (
-      <div className="w-full h-full bg-gradient-to-br from-emerald-950/20 to-teal-900/30 relative flex items-center justify-center overflow-hidden">
+      <div className="w-full h-full bg-emerald-200 dark:bg-emerald-950 relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="w-3/5 p-4 rounded-xl glassmorphism border border-white/10 shadow-lg relative z-10 flex items-center gap-4">
           <FileText className="w-12 h-12 text-emerald-400 shrink-0" />
@@ -80,7 +80,7 @@ const PROJECTS_DATA = [
     github: 'https://github.com/bhanuxai/candidate-ranking-ai',
     live: 'https://ranking-ai.vercel.app',
     banner: (
-      <div className="w-full h-full bg-gradient-to-br from-amber-950/20 to-purple-900/30 relative flex items-center justify-center overflow-hidden">
+      <div className="w-full h-full bg-amber-200 dark:bg-amber-950 relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-10" />
         <div className="w-2/3 p-4 rounded-xl glassmorphism border border-white/10 shadow-lg relative z-10 flex flex-col gap-3">
           <div className="flex justify-between items-center">
@@ -110,7 +110,7 @@ const PROJECTS_DATA = [
     github: 'https://github.com/bhanuxai/unidelivery',
     live: 'https://unidelivery.vercel.app',
     banner: (
-      <div className="w-full h-full bg-gradient-to-br from-blue-950/20 to-cyan-900/30 relative flex items-center justify-center overflow-hidden">
+      <div className="w-full h-full bg-cyan-200 dark:bg-cyan-950 relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="relative w-40 h-24 border border-white/10 rounded-xl glassmorphism flex items-center justify-center overflow-hidden">
           <div className="absolute top-2 left-2 flex items-center gap-1.5">
@@ -138,7 +138,7 @@ const PROJECTS_DATA = [
     github: 'https://github.com/bhanuxai/online-voting-system',
     live: 'https://voting-blockchain.vercel.app',
     banner: (
-      <div className="w-full h-full bg-gradient-to-br from-fuchsia-950/20 to-violet-900/30 relative flex items-center justify-center overflow-hidden">
+      <div className="w-full h-full bg-fuchsia-200 dark:bg-fuchsia-950 relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-15" />
         <div className="w-3/5 p-4 rounded-xl glassmorphism border border-white/10 shadow-lg relative z-10 flex flex-col gap-2">
           <div className="flex justify-between items-center text-[10px] font-mono border-b border-white/5 pb-1">
@@ -197,7 +197,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl md:text-5xl text-white tracking-tight"
+            className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight"
           >
             Featured Projects
           </motion.h2>
@@ -237,7 +237,7 @@ export default function Projects() {
                   {project.subtitle}
                 </span>
                 
-                <h3 className="font-display font-bold text-xl text-white mb-3 group-hover:text-primary transition-colors">
+                <h3 className="font-display font-bold text-xl text-textLight mb-3 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
                 
@@ -250,7 +250,7 @@ export default function Projects() {
                   {project.technologies.map((tech) => (
                     <span 
                       key={tech} 
-                      className="px-2 py-1 rounded bg-white/3 border border-white/5 text-[10px] font-semibold text-textLight"
+                      className="px-2 py-1 rounded bg-white/50 dark:bg-white/3 border border-glassBorder text-[10px] font-semibold text-textLight"
                     >
                       {tech}
                     </span>

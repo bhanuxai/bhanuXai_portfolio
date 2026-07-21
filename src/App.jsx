@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
 
 // Component imports
 
@@ -16,7 +17,6 @@ import CodingProfiles from './sections/CodingProfiles';
 import Gallery from './sections/Gallery';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
-import Aurora from './components/Aurora';
 import ProfileCard from './components/ProfileCard';
 import profileAvatar from './assets/Gemini_Generated_Image_m50r4pm50r4pm50r.png';
 
@@ -27,6 +27,27 @@ export default function App() {
   // Reading progress tracking
   const { scrollYProgress } = useScroll();
   const [showProfile, setShowProfile] = useState(false);
+
+  // Theme management: default to 'light'
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme_preference_v2');
+    return saved === 'dark' ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      localStorage.setItem('theme_preference_v2', 'dark');
+    } else {
+      root.classList.remove('dark');
+      localStorage.setItem('theme_preference_v2', 'light');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   // Lenis Smooth Scroll initialization
   useEffect(() => {
@@ -51,12 +72,22 @@ export default function App() {
 
   return (
     <>
-      <div className="min-h-screen relative flex flex-col bg-bgDark selection:bg-primary/30 selection:text-accent">
+      <div 
+        className="min-h-screen relative flex flex-col selection:bg-primary/30 selection:text-accent bg-transparent"
+      >
         
-
-
-        {/* Aurora Background Overlay */}
-        <Aurora />
+        {/* Floating Theme Toggle */}
+        <button
+          onClick={toggleTheme}
+          className="fixed top-6 right-6 md:right-8 z-[9999] p-3 glassmorphism text-textLight hover:scale-105 active:scale-95 transition-all cursor-pointer flex items-center justify-center"
+          aria-label="Toggle Theme"
+        >
+          {theme === 'dark' ? (
+            <Sun className="w-5 h-5 text-amber-400" />
+          ) : (
+            <Moon className="w-5 h-5 text-indigo-600" />
+          )}
+        </button>
 
         {/* Sticky Navbar */}
         <Navbar onLogoClick={() => setShowProfile(true)} />

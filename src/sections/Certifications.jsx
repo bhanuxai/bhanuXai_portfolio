@@ -60,9 +60,7 @@ const CERTIFICATES = [
 
 export default function Certifications() {
   return (
-    <section id="certificates" className="py-24 relative overflow-hidden bg-bgDark">
-      {/* Background radial glow */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full filter blur-[120px] pointer-events-none" />
+    <section id="certificates" className="py-24 relative overflow-hidden bg-transparent">
 
       <div className="max-w-7xl mx-auto px-6">
         
@@ -82,7 +80,7 @@ export default function Certifications() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl md:text-5xl text-white tracking-tight"
+            className="font-display font-black text-4xl md:text-5xl text-textLight tracking-tight"
           >
             Certifications &amp; Badges
           </motion.h2>
@@ -98,7 +96,7 @@ export default function Certifications() {
         </div>
 
         {/* ScrollStack Cards Area */}
-        <div className="relative max-w-lg mx-auto h-[480px] w-full border border-white/5 rounded-3xl bg-white/1 backdrop-blur-md p-4">
+        <div className="relative max-w-lg mx-auto h-[480px] w-full border-[3px] border-black dark:border-white rounded bg-white dark:bg-zinc-900 p-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_var(--primary-color)]">
           <ScrollStack
             useWindowScroll={false}
             itemDistance={120}
@@ -113,20 +111,20 @@ export default function Certifications() {
           >
             {CERTIFICATES.map((cert) => (
               <ScrollStackItem key={cert.id} itemClassName="w-full">
-                <div className={`w-full p-8 rounded-2xl border bg-gradient-to-br ${cert.color} shadow-glass-glow flex flex-col justify-between min-h-[220px] group hover:shadow-glow-primary transition-all duration-300`}>
+                <div className="w-full p-8 rounded border-[3px] border-black dark:border-white bg-white dark:bg-zinc-800 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_var(--primary-color)] flex flex-col justify-between min-h-[220px] group transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[10px_10px_0px_0px_var(--primary-color)]">
                   <div>
                     {/* Top Badges */}
                     <div className="flex justify-between items-start mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white shadow-inner">
+                      <div className="w-10 h-10 rounded bg-accent text-black border-2 border-black dark:border-white flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
                         <cert.logo className="w-5 h-5" />
                       </div>
-                      <div className="flex items-center gap-1 text-[9px] text-emerald-400 font-semibold bg-emerald-950/30 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+                      <div className="flex items-center gap-1 text-[9px] text-black font-semibold bg-green-400 border-2 border-black px-2 py-0.5 rounded">
                         <ShieldCheck className="w-3 h-3" /> Verified
                       </div>
                     </div>
 
                     {/* Info */}
-                    <h3 className="font-display font-bold text-lg md:text-xl text-white mb-2 leading-snug">
+                    <h3 className="font-display font-bold text-lg md:text-xl text-textLight mb-2 leading-snug">
                       {cert.title}
                     </h3>
                     
@@ -148,7 +146,7 @@ export default function Certifications() {
                       rel="noreferrer"
                       className="flex items-center gap-1.5 text-[11px] font-semibold text-primary hover:text-cyan-400 transition-colors"
                     >
-                      Verify ID: <span className="font-mono text-[9px] bg-white/5 px-2 py-0.5 rounded border border-white/5">{cert.credentialId}</span>
+                      Verify ID: <span className="font-mono text-[9px] bg-white/50 dark:bg-white/5 px-2 py-0.5 rounded border border-glassBorder">{cert.credentialId}</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
