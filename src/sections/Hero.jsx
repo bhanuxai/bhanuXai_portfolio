@@ -106,7 +106,7 @@ export default function Hero() {
             {/* Primary View Projects */}
             <button
               onClick={() => handleScrollTo('#projects')}
-              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm bg-primary text-black flex items-center justify-center gap-2 glow-button cursor-none"
+              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm bg-primary text-black flex items-center justify-center gap-2 glow-button cursor-pointer"
             >
               <Code className="w-4 h-4" />
               View Projects
@@ -116,7 +116,7 @@ export default function Hero() {
             <a
               href="/BhanuxaiResume(FRONTEND).pdf"
               download="BhanuxaiResume(FRONTEND).pdf"
-              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm glassmorphism text-textLight flex items-center justify-center gap-2 cursor-none"
+              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm glassmorphism text-textLight flex items-center justify-center gap-2 cursor-pointer"
             >
               <FileText className="w-4 h-4" />
               Download Resume
@@ -125,7 +125,7 @@ export default function Hero() {
             {/* Contact */}
             <button
               onClick={() => handleScrollTo('#contact')}
-              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm text-textMuted hover:text-textLight hover:underline flex items-center justify-center gap-2 cursor-none"
+              className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm text-textMuted hover:text-textLight hover:underline flex items-center justify-center gap-2 cursor-pointer"
             >
               <Send className="w-4 h-4" />
               Contact
@@ -148,7 +148,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-none hidden lg:flex"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer hidden lg:flex"
           onClick={() => handleScrollTo('#about')}
         >
           <span className="text-[9px] uppercase tracking-widest text-textMuted font-bold">Scroll Down</span>

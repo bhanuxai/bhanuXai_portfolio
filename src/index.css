@@ -228,3 +228,14 @@ html.lenis, html.lenis body {
 .bg-glassBg {
   background-color: var(--glass-bg) !important;
 }
+
+/* Fail-safe override: Force default browser cursor visibility across the entire site */
+html, body, main, section, div, p, span, h1, h2, h3, h4, h5, h6 {
+  cursor: default;
+}
+a, button, [role="button"], .cursor-pointer, .cursor-pointer * {
+  cursor: pointer !important;
+}
+input, textarea, select, .cursor-text {
+  cursor: text !important;
+}

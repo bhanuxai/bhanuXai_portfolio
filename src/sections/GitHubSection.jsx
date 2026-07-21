@@ -298,7 +298,7 @@ export default function GitHubSection() {
                         key={dIdx}
                         onMouseEnter={(e) => handleMouseEnter(e, day.count, day.date)}
                         onMouseLeave={handleMouseLeave}
-                        className={`w-3.5 h-3.5 rounded-sm transition-all duration-150 cursor-none hover:scale-110 hover:z-10 ${getColorClass(day.level)}`}
+                        className={`w-3.5 h-3.5 rounded-sm transition-all duration-150 cursor-pointer hover:scale-110 hover:z-10 ${getColorClass(day.level)}`}
                       />
                     ))}
                   </div>

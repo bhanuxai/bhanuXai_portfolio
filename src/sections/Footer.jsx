@@ -58,7 +58,7 @@ export default function Footer() {
         {/* Back to Top */}
         <button
           onClick={scrollToTop}
-          className="w-10 h-10 glassmorphism text-textMuted hover:text-textLight flex items-center justify-center cursor-none group"
+          className="w-10 h-10 glassmorphism text-textMuted hover:text-textLight flex items-center justify-center cursor-pointer group"
           title="Back to Top"
         >
           <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
