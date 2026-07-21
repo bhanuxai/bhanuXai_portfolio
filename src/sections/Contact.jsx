@@ -7,8 +7,8 @@ import emailjs from '@emailjs/browser';
 const SOCIALS = [
   { name: 'GitHub', icon: FaGithub, url: 'https://github.com/bhanuxai', color: 'hover:bg-zinc-700 hover:text-white dark:hover:bg-zinc-100 dark:hover:text-black' },
   { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/bhanu-sesha-sai-/', color: 'hover:bg-blue-600 hover:text-white' },
-  { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com', color: 'hover:bg-pink-500 hover:text-white' },
-  { name: 'Email', icon: Mail, url: 'mailto:contact@bhanu.ai', color: 'hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-300 dark:hover:text-black' }
+  { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com/bhanuxai', color: 'hover:bg-pink-500 hover:text-white' },
+  { name: 'Email', icon: Mail, url: 'mailto:bhanuseshasai95@gmail.com', color: 'hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-300 dark:hover:text-black' }
 ];
 
 export default function Contact() {
@@ -26,30 +26,52 @@ export default function Contact() {
     e.preventDefault();
     setStatus('sending');
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
-
-    // If API keys aren't configured yet, perform a clean local mock trigger to show UI transitions
-    if (!serviceId || !templateId || !publicKey) {
-      setTimeout(() => {
-        setStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        // Reset status after a brief delay
-        setTimeout(() => setStatus('idle'), 4000);
-      }, 1500);
-      return;
-    }
-
     try {
-      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      let data = {};
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        throw new Error('Backend mail server is not reachable.');
+      }
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message.');
+      }
+
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 4000);
     } catch (err) {
-      console.error(err);
+      console.error('Contact Form error:', err);
+
+      // If backend API isn't hosted/accessible (e.g. static host), check for client-side EmailJS fallback
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
+
+      if (serviceId && templateId && publicKey) {
+        try {
+          await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+          setStatus('success');
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setTimeout(() => setStatus('idle'), 4000);
+          return;
+        } catch (emailjsErr) {
+          console.error('EmailJS Fallback error:', emailjsErr);
+        }
+      }
+
       setStatus('error');
-      setErrorMessage(err.text || 'A delivery failure occurred. Please try again.');
+      setErrorMessage(err.message || 'A delivery failure occurred. Please try again.');
       setTimeout(() => setStatus('idle'), 6000);
     }
   };
@@ -109,8 +131,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="text-[10px] uppercase font-extrabold text-textMuted block">Email Me</span>
-                  <a href="mailto:contact@bhanu.ai" className="text-textLight hover:text-primary transition-colors cursor-none font-bold underline">
-                    contact@bhanu.ai
+                  <a href="mailto:bhanuseshasai95@gmail.com" className="text-textLight hover:text-primary transition-colors cursor-none font-bold underline">
+                    bhanuseshasai95@gmail.com
                   </a>
                 </div>
               </div>
