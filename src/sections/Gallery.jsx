@@ -1,52 +1,178 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Stars } from '@react-three/drei';
 import Stack from '../components/Stack';
 
-const IMAGES = [
+// Three.js background particles that react to cursor coordinates
+function InteractiveParticles({ mouse }) {
+  const pointsRef = useRef();
+
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+    // Gentely drift the system in space
+    pointsRef.current.rotation.x = Math.sin(t / 10) * 0.08;
+    pointsRef.current.rotation.y = t * 0.02;
+
+    // Direct parallax tilt with cursor position
+    pointsRef.current.rotation.x += (mouse.y * 0.15 - pointsRef.current.rotation.x) * 0.1;
+    pointsRef.current.rotation.y += (mouse.x * 0.15 - pointsRef.current.rotation.y) * 0.1;
+  });
+
+  return (
+    <group ref={pointsRef}>
+      <Stars radius={100} depth={60} count={2500} factor={6} saturation={0.6} fade speed={1.5} />
+      <mesh>
+        <sphereGeometry args={[14, 16, 16]} />
+        <meshBasicMaterial color="#fcd34d" wireframe transparent opacity={0.02} />
+      </mesh>
+    </group>
+  );
+}
+
+const MOMENTS = [
   {
-    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format",
-    alt: "Creative Coding Space"
+    id: "01",
+    title: "Camera & Studio Setup",
+    desc: "Calibrating focal lengths, soft light boxes, and backdrop contrasts for high-res equipment capture."
   },
   {
-    src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format",
-    alt: "Abstract 3D Art"
+    id: "02",
+    title: "Desk & Monitor Array",
+    desc: "Framing the dual-screen configuration, keycaps, light bars, and clean cables aesthetic."
   },
   {
-    src: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=600&auto=format",
-    alt: "Mechanical Keyboard Setup"
+    id: "03",
+    title: "Hardware Lab Bench",
+    desc: "Macro-focus of microcontrollers, oscilloscope dials, and custom logic boards."
   },
   {
-    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format",
-    alt: "Development Workspace"
+    id: "04",
+    title: "Deep Learning Rig",
+    desc: "Close-up snap of the local multi-GPU server tower running training cycles."
   },
   {
-    src: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=600&auto=format",
-    alt: "Late Night Coding Sessions"
+    id: "05",
+    title: "Midnight Brainstorm",
+    desc: "Wide-aperture capture of the ideation whiteboard containing neural architecture graphs."
   }
 ];
 
 export default function Gallery() {
-  const cards = IMAGES.map((img, i) => (
-    <div key={i} className="relative w-full h-full group select-none">
-      <img 
-        src={img.src} 
-        alt={img.alt} 
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        draggable={false}
-      />
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 flex flex-col justify-end">
-        <h4 className="text-white font-semibold text-lg">{img.alt}</h4>
-        <span className="text-xs text-textMuted mt-1">Workspace &amp; Inspiration</span>
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    setMouse({ x, y });
+  };
+
+  const cards = MOMENTS.map((moment, i) => (
+    <div 
+      key={i} 
+      className="w-full h-full bg-[#0d0d11] border-[3px] border-black dark:border-white p-4 flex flex-col justify-between font-mono text-textLight relative overflow-hidden select-none"
+    >
+      {/* Scanning scanline animation */}
+      <div className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-80 animate-scanline pointer-events-none" />
+      
+      {/* Digital Grid overlay */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.04] pointer-events-none" />
+
+      {/* Polaroid Viewfinder Photo Area */}
+      <div className="flex-grow border-2 border-dashed border-white/10 rounded flex flex-col items-center justify-center p-6 bg-black/40 relative overflow-hidden">
+        {/* Viewfinder corner brackets */}
+        <div className="absolute w-4 h-4 border-t-2 border-l-2 border-primary top-3 left-3 opacity-60" />
+        <div className="absolute w-4 h-4 border-t-2 border-r-2 border-primary top-3 right-3 opacity-60" />
+        <div className="absolute w-4 h-4 border-b-2 border-l-2 border-primary bottom-3 left-3 opacity-60" />
+        <div className="absolute w-4 h-4 border-b-2 border-r-2 border-primary bottom-3 right-3 opacity-60" />
+        
+        {/* Animated Camera Aperture/Lens */}
+        <div className="w-20 h-20 rounded-full border-4 border-primary/20 flex items-center justify-center relative animate-pulse-slow">
+          <div className="w-14 h-14 rounded-full border-2 border-primary/40 flex items-center justify-center animate-spin-slow">
+            <div className="w-6 h-6 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+            </div>
+          </div>
+          {/* Aperture shutter blades */}
+          <span className="absolute w-1 h-3 bg-primary/40 top-1 left-1/2 -translate-x-1/2 rotate-12" />
+          <span className="absolute w-1 h-3 bg-primary/40 bottom-1 left-1/2 -translate-x-1/2 rotate-12" />
+          <span className="absolute w-3 h-1 bg-primary/40 left-1 top-1/2 -translate-y-1/2 rotate-12" />
+          <span className="absolute w-3 h-1 bg-primary/40 right-1 top-1/2 -translate-y-1/2 rotate-12" />
+        </div>
+
+        <span className="text-[9px] font-bold tracking-widest text-primary mt-6 uppercase animate-pulse">
+          [ CAPTURING ACTIVE SETUP... ]
+        </span>
+      </div>
+
+      {/* Polaroid Info Footer */}
+      <div className="pt-4 pb-1">
+        <span className="text-[8px] font-bold text-accent uppercase tracking-widest block mb-1">
+          Workspace Moment #{moment.id}
+        </span>
+        <h4 className="text-sm font-black text-textLight tracking-tight leading-tight">
+          {moment.title}
+        </h4>
+        <p className="text-[9px] text-textMuted mt-1.5 leading-relaxed font-medium">
+          {moment.desc}
+        </p>
+        
+        <div className="flex justify-between items-center text-[8px] text-primary/70 font-mono mt-4 border-t border-white/5 pt-2">
+          <span>LATITUDE: 31.2514 N</span>
+          <span>PHOTO COMMING SOON</span>
+        </div>
       </div>
     </div>
   ));
 
   return (
-    <section id="gallery" className="py-24 relative overflow-hidden bg-bgDark">
-      {/* Background radial glow */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full filter blur-[120px] pointer-events-none" />
+    <section 
+      id="gallery" 
+      onMouseMove={handleMouseMove}
+      className="py-24 relative overflow-hidden bg-bgDark cursor-default"
+    >
+      {/* Self-contained styling for scanlines and patterns */}
+      <style>{`
+        @keyframes scanline {
+          0% { top: 0%; opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { top: 100%; opacity: 0; }
+        }
+        .animate-scanline {
+          animation: scanline 5s linear infinite;
+        }
+        .bg-grid-pattern {
+          background-size: 15px 15px;
+          background-image: 
+            linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        }
+        .animate-spin-slow {
+          animation: spin 16s linear infinite;
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: .7; transform: scale(0.97); }
+        }
+      `}</style>
 
-      <div className="max-w-7xl mx-auto px-6">
+      {/* WebGL Canvas Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 10], fov: 60 }} gl={{ alpha: true }}>
+          <InteractiveParticles mouse={mouse} />
+        </Canvas>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -75,16 +201,16 @@ export default function Gallery() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-xl mx-auto text-textMuted text-sm md:text-base mt-4 font-medium"
           >
-            A visual stack of inspiration, workspaces, late-night setups, and coding parameters.
+            I am currently taking high-resolution captures of my hardware lab, coding screens, and setup. Real photos will be uploaded here soon!
           </motion.p>
         </div>
 
-        {/* Stack Container */}
+        {/* Stack Deck Container */}
         <div className="flex flex-col items-center justify-center">
-          <div className="w-[320px] h-[400px] md:w-[360px] md:h-[450px] relative select-none">
+          <div className="w-[320px] h-[400px] md:w-[360px] md:h-[460px] relative select-none">
             <Stack
               randomRotation={true}
-              sensitivity={180}
+              sensitivity={160}
               sendToBackOnClick={true}
               cards={cards}
               autoplay={false}
@@ -96,7 +222,7 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.6 }}
             viewport={{ once: true }}
-            className="text-xs text-textMuted mt-8 font-medium tracking-wide pointer-events-none"
+            className="text-[10px] font-mono text-primary mt-8 tracking-wider pointer-events-none font-bold uppercase"
           >
             💡 Drag cards left/right or click them to cycle the deck
           </motion.p>
