@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Terminal, BrainCircuit, Briefcase, Trophy, GitMerge } from 'lucide-react';
+import { GraduationCap, Terminal, BrainCircuit, Briefcase, Trophy, GitMerge, Cpu } from 'lucide-react';
 
 const TIMELINE_DATA = [
   {
@@ -13,11 +13,11 @@ const TIMELINE_DATA = [
   },
   {
     id: 2,
-    title: 'Learned Web Development',
+    title: 'Software Development',
     date: 'Early 2024',
     icon: Terminal,
     color: 'text-cyan-600 dark:text-cyan-400 bg-cyan-100 dark:bg-cyan-950/30 border-cyan-500',
-    description: 'Mastered modern CSS frameworks (Tailwind), ES6 JavaScript, and Single Page Application design using React and Vite. Focused on building clean, accessible, and fast frontends.'
+    description: 'Mastered modern full-stack development, scalable software design, and API engineering using React, Node.js, and Vite. Focused on building clean, accessible, scalable, and high-performance software systems.'
   },
   {
     id: 3,
@@ -37,6 +37,14 @@ const TIMELINE_DATA = [
   },
   {
     id: 5,
+    title: 'Machine Learning Engineer Intern',
+    date: '2025',
+    icon: Cpu,
+    color: 'text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/30 border-blue-500',
+    description: 'Worked on end-to-end machine learning pipelines including data preprocessing, feature engineering, predictive modeling, and model evaluation. Designed and deployed scalable machine learning inference endpoints and microservices.'
+  },
+  {
+    id: 6,
     title: 'Hackathons',
     date: '2025',
     icon: Trophy,
@@ -44,7 +52,7 @@ const TIMELINE_DATA = [
     description: 'Participated in fast-paced code sprints and hackathons. Collaborated in small groups to build, test, and present functional AI prototypes addressing real-world issues under tight time constraints.'
   },
   {
-    id: 6,
+    id: 7,
     title: 'Open Source Contributions',
     date: '2025 - Present',
     icon: GitMerge,

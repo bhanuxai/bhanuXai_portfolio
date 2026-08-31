@@ -40,7 +40,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
-            AI & Machine Learning Engineer | Frontend Developer
+            AI & Machine Learning Engineer | Software Developer
           </motion.div>
 
           {/* Text Reveal Title */}
@@ -114,8 +114,8 @@ export default function Hero() {
 
             {/* Secondary Download Resume */}
             <a
-              href="/BhanuxaiResume(FRONTEND).pdf"
-              download="BhanuxaiResume(FRONTEND).pdf"
+              href="/BhanuxaiResume(SOFTWARE_DEVELOPMENT).pdf"
+              download="BhanuxaiResume(SOFTWARE_DEVELOPMENT).pdf"
               className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm glassmorphism text-textLight flex items-center justify-center gap-2 cursor-pointer"
             >
               <FileText className="w-4 h-4" />

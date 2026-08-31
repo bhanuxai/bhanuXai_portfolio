@@ -147,7 +147,7 @@ export default function About() {
                 <p className="text-textMuted leading-relaxed text-sm">
                   I don't just write algorithms; I bridge them to functional user products. 
                   I focus on latency optimization, vector search indexing, intelligent agent flows, 
-                  and building intuitive frontends that make complex AI accessible to anyone.
+                  and building robust, accessible software architectures that make complex AI seamless for everyone.
                 </p>
               </div>
             </TiltCard>

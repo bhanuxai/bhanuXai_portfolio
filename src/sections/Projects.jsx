@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 const PROJECTS_DATA = [
   {
     id: 1,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'Parallax Storytelling',
     subtitle: 'Interactive Narrative & Motion',
     description: 'An immersive storytelling web experience built with smooth parallax scrolling, dynamic layered animations, and 3D web visuals.',
@@ -32,7 +32,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 3,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'Smart Logistics & Delivery Intelligence',
     subtitle: 'AI-Powered Delivery Routing & Logistics',
     description: 'An intelligent logistics and delivery management system that optimizes dispatch courier routes, forecasts delivery times, and streamlines order tracking using machine learning integrations.',
@@ -45,7 +45,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 4,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'Sectra College Connect',
     subtitle: 'Campus Networking Hub',
     description: 'A modern community platform for university students to share projects, connect with peers, and collaborate on campus events.',
@@ -58,7 +58,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 5,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'CodeDrop',
     subtitle: 'Instant Code & Snippet Sharing Utility',
     description: 'Developer tool for instant code snippet creation, real-time syntax highlighting, and quick shareable links.',
@@ -71,7 +71,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 6,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'Apeiron',
     subtitle: 'Modern Web Design & Interactive UI',
     description: 'Premium web interface featuring smooth micro-animations, glassmorphism design system, and sleek dark mode aesthetics.',
@@ -84,7 +84,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 7,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'Global Barite V2',
     subtitle: 'Industrial Enterprise Website',
     description: 'High-performance corporate showcase built for global mineral suppliers with responsive product catalogs and dynamic inquiries.',
@@ -97,7 +97,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 8,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'LPU TGPA/CGPA Calculator',
     subtitle: 'University Academic Grade Estimator',
     description: 'Utility web app designed for students to easily calculate semester TGPA/CGPA, forecast grades, and track academic targets.',
@@ -110,7 +110,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 9,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'Clutch',
     subtitle: 'Dynamic E-Commerce Showcase',
     description: 'Sleek web application with interactive product customizer, cart management, and seamless UI transitions.',
@@ -123,7 +123,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 10,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'Nisarg Srishti Foundation',
     subtitle: 'NGO Portal & Community Welfare',
     description: 'Full-featured NGO website featuring impact stories, donation drives, volunteer registration, and awareness campaigns.',
@@ -136,7 +136,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 11,
-    category: 'Frontend',
+    category: 'Software Development',
     title: 'Cyborg Landing Page',
     subtitle: 'Cyberpunk Gaming & Esports Portal',
     description: 'Dark futuristic landing page built with glowing neon accents, hero banners, and interactive game library cards.',
@@ -155,7 +155,7 @@ export default function Projects() {
 
   const categories = [
     { label: 'All Projects', value: 'All', icon: Layers },
-    { label: 'Frontend', value: 'Frontend', icon: Code2 },
+    { label: 'Software Development', value: 'Software Development', icon: Code2 },
     { label: 'Machine Learning', value: 'Machine Learning', icon: Brain }
   ];
 
@@ -203,7 +203,7 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-xl mx-auto text-textMuted text-sm md:text-base mt-4 font-medium"
           >
-            A collection of production frontend interfaces, machine learning pipelines, and full-stack software products.
+            A collection of production software solutions, machine learning pipelines, and full-stack software products.
           </motion.p>
         </div>
 
