@@ -114,8 +114,10 @@ export default function Hero() {
 
             {/* Secondary Download Resume */}
             <a
-              href="/BhanuxaiResume(SOFTWARE_DEVELOPMENT).pdf"
-              download="BhanuxaiResume(SOFTWARE_DEVELOPMENT).pdf"
+              href={`${import.meta.env.BASE_URL}BhanuxaiResume_V6.1_.pdf`}
+              download="BhanuxaiResume_V6.1_.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm glassmorphism text-textLight flex items-center justify-center gap-2 cursor-pointer"
             >
               <FileText className="w-4 h-4" />

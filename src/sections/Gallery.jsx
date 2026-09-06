@@ -1,27 +1,29 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 import Stack from '../components/Stack';
 
 // Three.js background particles that react to cursor coordinates
-function InteractiveParticles({ mouse }) {
+function InteractiveParticles() {
   const pointsRef = useRef();
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    // Gentely drift the system in space
+    // Gently drift the system in space
     pointsRef.current.rotation.x = Math.sin(t / 10) * 0.08;
     pointsRef.current.rotation.y = t * 0.02;
 
-    // Direct parallax tilt with cursor position
-    pointsRef.current.rotation.x += (mouse.y * 0.15 - pointsRef.current.rotation.x) * 0.1;
-    pointsRef.current.rotation.y += (mouse.x * 0.15 - pointsRef.current.rotation.y) * 0.1;
+    // Direct parallax tilt with cursor position from R3F pointer
+    const px = state.pointer.x;
+    const py = state.pointer.y;
+    pointsRef.current.rotation.x += (py * 0.12 - pointsRef.current.rotation.x) * 0.05;
+    pointsRef.current.rotation.y += (px * 0.12 - pointsRef.current.rotation.y) * 0.05;
   });
 
   return (
     <group ref={pointsRef}>
-      <Stars radius={100} depth={60} count={2500} factor={6} saturation={0.6} fade speed={1.5} />
+      <Stars radius={100} depth={60} count={1200} factor={4} saturation={0.6} fade speed={1.2} />
       <mesh>
         <sphereGeometry args={[14, 16, 16]} />
         <meshBasicMaterial color="#fcd34d" wireframe transparent opacity={0.02} />
@@ -59,14 +61,22 @@ const MOMENTS = [
 ];
 
 export default function Gallery() {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
 
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    const y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-    setMouse({ x, y });
-  };
+  useEffect(() => {
+    if (!sectionRef.current || typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const cards = MOMENTS.map((moment, i) => (
     <div 
@@ -129,7 +139,7 @@ export default function Gallery() {
   return (
     <section 
       id="gallery" 
-      onMouseMove={handleMouseMove}
+      ref={sectionRef}
       className="py-24 relative overflow-hidden bg-bgDark cursor-default"
     >
       {/* Self-contained styling for scanlines and patterns */}
@@ -167,8 +177,13 @@ export default function Gallery() {
 
       {/* WebGL Canvas Background */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
-        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 10], fov: 60 }} gl={{ alpha: true }}>
-          <InteractiveParticles mouse={mouse} />
+        <Canvas 
+          frameloop={isVisible ? "always" : "never"}
+          dpr={[1, 1.5]} 
+          camera={{ position: [0, 0, 10], fov: 60 }} 
+          gl={{ alpha: true, powerPreference: "high-performance" }}
+        >
+          <InteractiveParticles />
         </Canvas>
       </div>
 

@@ -5,12 +5,13 @@ import * as THREE from "three";
 import Card from "./Card";
 import { User } from "../types/types";
 
-const Experience = (student: User) => {
+const Experience = ({ isVisible = true, ...student }: User & { isVisible?: boolean }) => {
   return (
     <Canvas 
-      dpr={[1, 2]} 
+      frameloop={isVisible ? "always" : "never"}
+      dpr={[1, 1.5]} 
       camera={{ position: [0, 0, 13], fov: 25 }}
-      gl={{ alpha: true }}
+      gl={{ alpha: true, powerPreference: "high-performance" }}
       onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), 0)}
     >
       <ambientLight intensity={1.5} />
