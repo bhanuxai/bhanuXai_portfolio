@@ -106,7 +106,7 @@ export default function App() {
           <Experience />
           <GitHubSection />
           <CodingProfiles />
-          <Gallery />
+          {/* <Gallery /> */}
           <Contact />
         </main>
 

@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
-  { name: 'Gallery', href: '#gallery' },
+  // { name: 'Gallery', href: '#gallery' },
   { name: 'Contact', href: '#contact' },
 ];
 
