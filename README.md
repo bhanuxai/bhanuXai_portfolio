@@ -1,6 +1,6 @@
 # 🌌 Bhanu Sesha Sai — Interactive 3D Portfolio
 
-Welcome to my portfolio! This is a state-of-the-art, premium portfolio website designed to showcase my engineering works, certifications, and technical arsenal. It features interactive 3D elements, physics simulations, dynamic animations, and responsive bento-grid layouts.
+Welcome to my portfolio! This is a state-of-the-art, premium portfolio website designed to showcase my engineering works, certifications, and technical projects. It features interactive 3D elements, physics simulations, dynamic animations, and responsive bento-grid layouts.
 
 ---
 

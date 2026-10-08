@@ -131,15 +131,6 @@ export default function Skills() {
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold tracking-widest text-accent uppercase mb-2 block"
-          >
-            Technical Arsenal
-          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -275,7 +266,7 @@ export default function Skills() {
           <div className="flex items-center justify-center gap-2 mb-6">
             <Sparkles className="w-4 h-4 text-accent" />
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-textMuted">
-              Continuous Live Arsenal Marquee
+              Continuous Live Skills Marquee
             </span>
           </div>
           <LogoLoop

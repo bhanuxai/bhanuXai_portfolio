@@ -126,15 +126,6 @@ export default function CodingProfiles() {
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold tracking-widest text-accent uppercase mb-2 block"
-          >
-            Digital Footprint
-          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

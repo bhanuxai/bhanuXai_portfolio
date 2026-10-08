@@ -86,15 +86,6 @@ export default function Contact() {
         
         {/* Section Header */}
         <div className="text-center mb-20">
-          <motion.span
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold tracking-widest text-primary uppercase mb-2 block"
-          >
-            Connection Hub
-          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

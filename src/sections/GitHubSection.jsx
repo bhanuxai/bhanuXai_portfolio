@@ -306,8 +306,7 @@ export default function GitHubSection() {
               </div>
             </div>
 
-            <div className="flex justify-between items-center text-[10px] text-textMuted mt-4 border-t border-white/5 pt-4">
-              <span>{isSynced ? "Real-time logs synced dynamically" : "Simulated logs syncing..."}</span>
+            <div className="flex justify-end items-center text-[10px] text-textMuted mt-4 border-t border-white/5 pt-4">
               <div className="flex items-center gap-1.5">
                 <span>Less</span>
                 <div className="w-2.5 h-2.5 rounded-sm bg-[#ebedf0] border border-[#d1d5db]/30 dark:bg-[#161b22] dark:border-[#30363d]/30" />
