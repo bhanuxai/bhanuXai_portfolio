@@ -61,11 +61,11 @@ const TIMELINE_DATA = [
   },
   {
     id: 8,
-    title: 'Hackathons',
+    title: 'Hackathons (BuildFastWithAI)',
     date: '2025',
     icon: Trophy,
     color: 'text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/30 border-orange-500',
-    description: 'Participated in fast-paced code sprints and hackathons. Collaborated in small groups to build, test, and present functional AI prototypes addressing real-world issues under tight time constraints.'
+    description: 'Competed in fast-paced AI hackathons including BuildFastWithAI, building AgentZ—an autonomous cross-device AI personal agent that controls Windows and Android devices using multi-turn planning and policy engines.'
   },
   {
     id: 9,

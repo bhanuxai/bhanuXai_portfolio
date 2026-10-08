@@ -185,13 +185,14 @@ export default function About() {
                   <Trophy className="w-6 h-6" />
                 </div>
                 <h3 className="font-display font-black text-2xl text-textLight mb-4">
-                  Hackathon Competitor
+                  Hackathon Builder
                 </h3>
                 <p className="text-textMuted leading-relaxed text-sm">
-                  Active participant in regional and national hackathons. 
-                  I love the challenge of taking a complex problem statement, designing an AI-backed pipeline, 
-                  and presenting a working prototype within a high-stakes 36-hour sprint.
+                  Active participant in competitive hackathons like BuildFastWithAI, where I built AgentZ (cross-device autonomous device automation). I excel at turning complex challenges into functioning, high-impact AI prototypes under sprint constraints.
                 </p>
+              </div>
+              <div className="mt-8 flex items-center gap-2 text-xs font-semibold text-amber-500 uppercase tracking-wider">
+                <Trophy className="w-4 h-4" /> BuildFastWithAI • AgentZ
               </div>
             </TiltCard>
           </motion.div>
