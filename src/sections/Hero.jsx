@@ -70,7 +70,7 @@ export default function Hero() {
           >
             I specialize in{" "}
             <RotatingText
-              texts={['AI Research', 'Neural Networks', 'Agentic Systems', 'Full-Stack Apps']}
+              texts={['AI Research', '1000+ Student Community', 'Freelance Solutions', 'Neural Networks', 'Full-Stack Apps']}
               mainClassName="px-2.5 py-0.5 bg-accent/15 border-2 border-accent text-accent rounded-none font-mono inline-flex overflow-hidden"
               staggerFrom="last"
               initial={{ y: "100%" }}

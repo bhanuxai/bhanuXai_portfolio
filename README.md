@@ -37,6 +37,7 @@ Access the live deployment here: **[bhanuxai.netlify.app](https://bhanuxai.netli
 
 ### 📜 2. Bento-Grid About & Bento Cards
 * **3D Tilt Effect:** Cards respond to mouse cursor coordinates with smooth, spring-loaded 3D tilt angles.
+* **Community Leadership & Freelancing:** Highlights leadership of an on-campus community with over 1,000+ students at Lovely Professional University, along with client-focused freelance software and AI engineering solutions.
 * **Clean Sections:** Categorized details highlighting my journey in AI & Machine Learning, Full-Stack development, and open-source contributions.
 
 ### 🎓 3. Credentials & Scroll Stack

@@ -142,7 +142,7 @@ export default function App() {
               name="Bhanu Sesha Sai"
               title="AI & ML Engineer & Software Developer"
               handle="bhanuxai"
-              status="Online & Available"
+              status="Available for Freelance & AI Roles"
               contactText="Get in Touch"
               avatarUrl={profileAvatar}
               showUserInfo={true}

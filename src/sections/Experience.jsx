@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Terminal, BrainCircuit, Briefcase, Trophy, GitMerge, Cpu } from 'lucide-react';
+import { GraduationCap, Terminal, BrainCircuit, Briefcase, Trophy, GitMerge, Cpu, Users, Laptop } from 'lucide-react';
 
 const TIMELINE_DATA = [
   {
@@ -13,6 +13,14 @@ const TIMELINE_DATA = [
   },
   {
     id: 2,
+    title: 'Campus Community Lead (1,000+ Students)',
+    date: '2024 - Present',
+    icon: Users,
+    color: 'text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/30 border-amber-500',
+    description: 'Founded and nurtured an active student developer and AI community of over 1,000+ students on campus at Lovely Professional University. Organized hands-on coding sessions, AI workshops, hackathon teams, and peer mentorship.'
+  },
+  {
+    id: 3,
     title: 'Software Development',
     date: 'Early 2024',
     icon: Terminal,
@@ -20,7 +28,7 @@ const TIMELINE_DATA = [
     description: 'Mastered modern full-stack development, scalable software design, and API engineering using React, Node.js, and Vite. Focused on building clean, accessible, scalable, and high-performance software systems.'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Started AI Journey',
     date: 'Mid 2024',
     icon: BrainCircuit,
@@ -28,7 +36,7 @@ const TIMELINE_DATA = [
     description: 'Deep-dived into core AI/ML mechanics, training data pipelines, feature selection, and optimization methodologies. Engineered first custom prediction structures with NumPy and Scikit-Learn.'
   },
   {
-    id: 4,
+    id: 5,
     title: 'Built Multiple Projects',
     date: 'Late 2024',
     icon: Briefcase,
@@ -36,7 +44,15 @@ const TIMELINE_DATA = [
     description: 'Engineered full-stack applications with AI backend processors. Built and deployed custom semantic CV scrapers, cloud document engines, and drone route simulation utilities.'
   },
   {
-    id: 5,
+    id: 6,
+    title: 'Freelance Software & AI Developer',
+    date: '2024 - Present',
+    icon: Laptop,
+    color: 'text-teal-600 dark:text-teal-400 bg-teal-100 dark:bg-teal-950/30 border-teal-500',
+    description: 'Delivered client-tailored digital solutions and custom AI integrations as an independent freelance developer. Built production-ready web applications, responsive enterprise portals, and automated data pipelines.'
+  },
+  {
+    id: 7,
     title: 'Machine Learning Engineer Intern',
     date: '2025',
     icon: Cpu,
@@ -44,15 +60,15 @@ const TIMELINE_DATA = [
     description: 'Worked on end-to-end machine learning pipelines including data preprocessing, feature engineering, predictive modeling, and model evaluation. Designed and deployed scalable machine learning inference endpoints and microservices.'
   },
   {
-    id: 6,
+    id: 8,
     title: 'Hackathons',
     date: '2025',
     icon: Trophy,
-    color: 'text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/30 border-amber-500',
+    color: 'text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/30 border-orange-500',
     description: 'Participated in fast-paced code sprints and hackathons. Collaborated in small groups to build, test, and present functional AI prototypes addressing real-world issues under tight time constraints.'
   },
   {
-    id: 7,
+    id: 9,
     title: 'Open Source Contributions',
     date: '2025 - Present',
     icon: GitMerge,

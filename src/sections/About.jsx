@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { Brain, Cpu, Trophy, GitBranch, Layers, Award } from 'lucide-react';
+import { Brain, Cpu, Trophy, GitBranch, Layers, Award, Users, Briefcase } from 'lucide-react';
 
 // Reusable 3D Tilt Card Component
 function TiltCard({ children, className = '' }) {
@@ -105,6 +105,28 @@ export default function About() {
         </motion.div>
       </div>
 
+      {/* Key Metric Highlights */}
+      <div className="max-w-7xl mx-auto px-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="glassmorphism p-5 rounded-2xl border border-glassBorder flex flex-col justify-center">
+            <span className="font-display font-black text-2xl md:text-3xl text-primary">1,000+</span>
+            <span className="text-xs md:text-sm text-textMuted font-semibold mt-1">LPU Campus Community</span>
+          </div>
+          <div className="glassmorphism p-5 rounded-2xl border border-glassBorder flex flex-col justify-center">
+            <span className="font-display font-black text-2xl md:text-3xl text-accent">Freelance</span>
+            <span className="text-xs md:text-sm text-textMuted font-semibold mt-1">Full-Stack &amp; AI Solutions</span>
+          </div>
+          <div className="glassmorphism p-5 rounded-2xl border border-glassBorder flex flex-col justify-center">
+            <span className="font-display font-black text-2xl md:text-3xl text-emerald-500">10+</span>
+            <span className="text-xs md:text-sm text-textMuted font-semibold mt-1">Production Applications</span>
+          </div>
+          <div className="glassmorphism p-5 rounded-2xl border border-glassBorder flex flex-col justify-center">
+            <span className="font-display font-black text-2xl md:text-3xl text-violet-500">AI / ML &amp; Dev</span>
+            <span className="text-xs md:text-sm text-textMuted font-semibold mt-1">Dual Engineering Core</span>
+          </div>
+        </div>
+      </div>
+
       {/* Bento Grid layout */}
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
@@ -114,7 +136,7 @@ export default function About() {
           viewport={{ once: true, margin: '-100px' }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          {/* Card 1: AI & ML Student (Spans 2 cols on md+) */}
+          {/* Card 1: AI & ML Student & Campus Community Lead (Spans 2 cols on md+) */}
           <motion.div variants={cardVariants} className="md:col-span-2">
             <TiltCard className="h-full flex flex-col justify-between">
               <div>
@@ -122,33 +144,35 @@ export default function About() {
                   <Brain className="w-6 h-6" />
                 </div>
                 <h3 className="font-display font-black text-2xl text-textLight mb-4">
-                  AI & ML Student
+                  AI &amp; ML Student &amp; Campus Community Lead
                 </h3>
                 <p className="text-textMuted leading-relaxed text-sm md:text-base">
-                  Currently pursuing a Bachelor of Technology specializing in Artificial Intelligence and Machine Learning at Lovely Professional University (LPU) (started August 2024). My academic journey involves deep-diving into neural networks, reinforcement learning, computer vision, natural language processing, and advanced deep learning cognitive architectures.
+                  Currently pursuing a Bachelor of Technology specializing in Artificial Intelligence and Machine Learning at Lovely Professional University (LPU) (started August 2024). Beyond coursework, I built and actively run an on-campus student tech community of 1,000+ peers—guiding beginners, organizing developer workshops, and spearheading collaborative AI initiatives.
                 </p>
               </div>
-              <div className="mt-8 flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-wider">
-                <Award className="w-4 h-4" /> Exploring next-gen foundation models
+              <div className="mt-8 flex flex-wrap items-center gap-4 text-xs font-semibold text-accent uppercase tracking-wider">
+                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-primary" /> 1,000+ Students Mentored at LPU</span>
+                <span className="flex items-center gap-1.5"><Award className="w-4 h-4" /> Next-Gen AI &amp; Deep Learning</span>
               </div>
             </TiltCard>
           </motion.div>
 
-          {/* Card 2: Product Builder */}
+          {/* Card 2: Product Builder & Freelancer */}
           <motion.div variants={cardVariants}>
             <TiltCard className="h-full flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded bg-accent text-black border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000000] dark:shadow-[2px_2px_0px_0px_#FFFFFF] flex items-center justify-center mb-6">
-                  <Cpu className="w-6 h-6" />
+                  <Briefcase className="w-6 h-6" />
                 </div>
                 <h3 className="font-display font-black text-2xl text-textLight mb-4">
-                  Product Builder
+                  Product Builder &amp; Freelancer
                 </h3>
                 <p className="text-textMuted leading-relaxed text-sm">
-                  I don't just write algorithms; I bridge them to functional user products. 
-                  I focus on latency optimization, vector search indexing, intelligent agent flows, 
-                  and building robust, accessible software architectures that make complex AI seamless for everyone.
+                  I don't just write algorithms; I turn ideas into reliable production systems. As a freelance developer, I work directly with clients to ship full-stack web platforms, custom AI integrations, high-performance business portfolios, and automated pipelines with swift turnarounds.
                 </p>
+              </div>
+              <div className="mt-8 flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
+                <Cpu className="w-4 h-4" /> Client Solutions &amp; Fast Prototyping
               </div>
             </TiltCard>
           </motion.div>
