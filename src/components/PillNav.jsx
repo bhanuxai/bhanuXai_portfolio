@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
+import { Sun, Moon } from 'lucide-react';
 import './PillNav.css';
 
 const PillNav = ({
@@ -16,7 +17,9 @@ const PillNav = ({
   pillTextColor,
   onMobileMenuClick,
   onLogoClick,
-  initialLoadAnimation = true
+  initialLoadAnimation = true,
+  theme,
+  onToggleTheme
 }) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -322,15 +325,33 @@ const PillNav = ({
           </ul>
         </div>
 
-        <button
-          className="mobile-menu-button mobile-only"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-          ref={hamburgerRef}
-        >
-          <span className="hamburger-line" />
-          <span className="hamburger-line" />
-        </button>
+        <div className="mobile-nav-actions mobile-only">
+          {onToggleTheme && (
+            <button
+              type="button"
+              className="mobile-theme-btn"
+              onClick={onToggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <Sun className="mobile-theme-icon text-amber-400" />
+              ) : (
+                <Moon className="mobile-theme-icon text-indigo-600" />
+              )}
+            </button>
+          )}
+
+          <button
+            type="button"
+            className="mobile-menu-button"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+            ref={hamburgerRef}
+          >
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
+          </button>
+        </div>
       </nav>
 
       <div className="mobile-menu-popover mobile-only" ref={mobileMenuRef} style={cssVars}>
@@ -361,6 +382,24 @@ const PillNav = ({
               )}
             </li>
           ))}
+          {onToggleTheme && (
+            <li className="mobile-menu-theme-item">
+              <button
+                type="button"
+                className="mobile-menu-theme-toggle"
+                onClick={() => {
+                  onToggleTheme();
+                }}
+              >
+                <span>Theme: {theme === 'dark' ? 'Dark' : 'Light'}</span>
+                {theme === 'dark' ? (
+                  <Sun className="w-4 h-4 text-amber-400" />
+                ) : (
+                  <Moon className="w-4 h-4 text-indigo-600" />
+                )}
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </div>

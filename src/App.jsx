@@ -77,10 +77,10 @@ export default function App() {
         className="min-h-screen relative flex flex-col selection:bg-primary/30 selection:text-accent bg-transparent"
       >
         
-        {/* Floating Theme Toggle */}
+        {/* Floating Theme Toggle (Desktop Only) */}
         <button
           onClick={toggleTheme}
-          className="fixed top-6 right-6 md:right-8 z-[9999] p-3 glassmorphism text-textLight hover:scale-105 active:scale-95 transition-all cursor-pointer flex items-center justify-center"
+          className="hidden md:flex fixed top-6 right-6 md:right-8 z-[9999] p-3 glassmorphism text-textLight hover:scale-105 active:scale-95 transition-all cursor-pointer items-center justify-center"
           aria-label="Toggle Theme"
         >
           {theme === 'dark' ? (
@@ -91,7 +91,11 @@ export default function App() {
         </button>
 
         {/* Sticky Navbar */}
-        <Navbar onLogoClick={() => setShowProfile(true)} />
+        <Navbar 
+          onLogoClick={() => setShowProfile(true)} 
+          theme={theme}
+          toggleTheme={toggleTheme}
+        />
 
         {/* Main Layout Sections */}
         <main className="flex-grow">

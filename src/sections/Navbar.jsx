@@ -13,7 +13,7 @@ const NAV_ITEMS = [
 
 const LOGO_SVG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%237c3aed"/><stop offset="100%" stop-color="%2306b6d4"/></linearGradient></defs><circle cx="50" cy="50" r="46" fill="url(%23g)"/><text x="50%" y="54%" fill="white" font-family="sans-serif" font-weight="900" font-size="34" text-anchor="middle" dominant-baseline="middle">B</text></svg>`;
 
-export default function Navbar({ onLogoClick }) {
+export default function Navbar({ onLogoClick, theme, toggleTheme }) {
   const [activeSection, setActiveSection] = useState('home');
 
   // Update active item based on intersection observer
@@ -70,6 +70,8 @@ export default function Navbar({ onLogoClick }) {
       hoveredPillTextColor="var(--nav-hover-text)"
       onLogoClick={onLogoClick}
       initialLoadAnimation={true}
+      theme={theme}
+      onToggleTheme={toggleTheme}
     />
   );
 }
