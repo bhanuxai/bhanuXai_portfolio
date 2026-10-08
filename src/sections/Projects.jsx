@@ -6,6 +6,19 @@ import { FaGithub } from 'react-icons/fa';
 const PROJECTS_DATA = [
   {
     id: 1,
+    category: 'Machine Learning',
+    title: 'GetPlacedResume Analyzer',
+    subtitle: 'AI Resume & CV ATS Analyzer',
+    description: 'An explainable, multi-dimensional ATS resume evaluation platform that analyzes resumes against job descriptions using advanced semantic NLP matching, heuristic scoring, and actionable feedback.',
+    technologies: ['FastAPI', 'Python', 'React 19', 'NLP', 'Tailwind CSS', 'Three.js'],
+    github: 'https://github.com/bhanuxai/GetPlacedResume.git',
+    live: 'https://getplacedresume.vercel.app/',
+    previewImage: '/images/previews/getplacedresume.png',
+    domainUrl: 'getplacedresume.vercel.app',
+    tagBg: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30'
+  },
+  {
+    id: 2,
     category: 'Software Development',
     title: 'Parallax Storytelling',
     subtitle: 'Interactive Narrative & Motion',
@@ -18,7 +31,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30'
   },
   {
-    id: 2,
+    id: 3,
     category: 'Machine Learning',
     title: 'RedRob Candidate Ranking',
     subtitle: 'AI Shortlisting & Resume Scoring',
@@ -31,7 +44,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-purple-500/10 text-purple-400 border-purple-500/30'
   },
   {
-    id: 3,
+    id: 4,
     category: 'Software Development',
     title: 'Smart Logistics & Delivery Intelligence',
     subtitle: 'AI-Powered Delivery Routing & Logistics',
@@ -44,7 +57,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
   },
   {
-    id: 4,
+    id: 5,
     category: 'Software Development',
     title: 'Sectra College Connect',
     subtitle: 'Campus Networking Hub',
@@ -57,7 +70,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-blue-500/10 text-blue-400 border-blue-500/30'
   },
   {
-    id: 5,
+    id: 6,
     category: 'Software Development',
     title: 'CodeDrop',
     subtitle: 'Instant Code & Snippet Sharing Utility',
@@ -70,7 +83,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-amber-500/10 text-amber-400 border-amber-500/30'
   },
   {
-    id: 6,
+    id: 7,
     category: 'Software Development',
     title: 'Apeiron',
     subtitle: 'Modern Web Design & Interactive UI',
@@ -83,7 +96,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-violet-500/10 text-violet-400 border-violet-500/30'
   },
   {
-    id: 7,
+    id: 8,
     category: 'Software Development',
     title: 'Global Barite V2',
     subtitle: 'Industrial Enterprise Website',
@@ -96,7 +109,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30'
   },
   {
-    id: 8,
+    id: 9,
     category: 'Software Development',
     title: 'LPU TGPA/CGPA Calculator',
     subtitle: 'University Academic Grade Estimator',
@@ -109,7 +122,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-rose-500/10 text-rose-400 border-rose-500/30'
   },
   {
-    id: 9,
+    id: 10,
     category: 'Software Development',
     title: 'Clutch',
     subtitle: 'Dynamic E-Commerce Showcase',
@@ -122,7 +135,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/30'
   },
   {
-    id: 10,
+    id: 11,
     category: 'Software Development',
     title: 'Nisarg Srishti Foundation',
     subtitle: 'NGO Portal & Community Welfare',
@@ -135,7 +148,7 @@ const PROJECTS_DATA = [
     tagBg: 'bg-green-500/10 text-green-400 border-green-500/30'
   },
   {
-    id: 11,
+    id: 12,
     category: 'Software Development',
     title: 'Cyborg Landing Page',
     subtitle: 'Cyberpunk Gaming & Esports Portal',
