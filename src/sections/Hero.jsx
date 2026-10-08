@@ -114,8 +114,8 @@ export default function Hero() {
 
             {/* Secondary Download Resume */}
             <a
-              href={`${import.meta.env.BASE_URL}BhanuxaiResume_V6.1_.pdf`}
-              download="BhanuxaiResume_V6.1_.pdf"
+              href={`${import.meta.env.BASE_URL}CV_BHANU_SESHA_SAI.pdf`}
+              download="CV_BHANU_SESHA_SAI.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 font-bold text-sm glassmorphism text-textLight flex items-center justify-center gap-2 cursor-pointer"

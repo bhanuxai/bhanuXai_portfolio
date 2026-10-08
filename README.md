@@ -58,7 +58,7 @@ Access the live deployment here: **[bhanuxai.netlify.app](https://bhanuxai.netli
 │   ├── font/                 # Custom card typography (.otf, .ttf)
 │   ├── images/               # Card background templates, logos, and bands
 │   ├── card.glb              # 3D clip and clamp metal meshes
-│   └── resume.pdf            # Professional downloadable resume
+│   └── CV_BHANU_SESHA_SAI.pdf    # Professional downloadable CV
 ├── src/
 │   ├── assets/               # Local images and graphic resources
 │   ├── components/
